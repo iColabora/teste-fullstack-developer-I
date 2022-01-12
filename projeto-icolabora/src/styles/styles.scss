@@ -38,16 +38,17 @@ body {
 //Estilo do Corpo da Tabela
 #result-celula {
     text-align: center;
-    cursor: pointer;
+    height: 35px;
+    
     #result-tarefa {
+        cursor: pointer;
         text-align: left;
-        background-color: $Antes;
+        background: linear-gradient(to right, $Depois 50%, $Antes 50%);
         background-size: 200% 100%;
-        transition: all 0.5s ease;
-        background-position: left;
+        background-position: right bottom;
+        transition: all .3s ease-out;
         &:hover {
-            background-color: $Depois;
-            background-position: right;
+            background-position: left bottom;
         }
     }
     .result-totais {
