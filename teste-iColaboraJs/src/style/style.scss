@@ -1,0 +1,96 @@
+$white:#FFF;
+$aligntxt: center;
+$crybaby: #B2EBF2;
+
+
+.tabela{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+
+
+.tabela td{
+    padding: 12px;
+}
+
+.descricao td{
+    background-color: #102938;
+    color: $white;
+}
+
+
+.tabelalf{
+    color: $white;
+}
+
+.tarefa{
+    text-align: left;
+    width: 400px;
+}
+
+.vencidoHead{
+    width: 200px;
+    text-align: $aligntxt;
+}
+tbody tr:nth-child(-n+4){
+    background-color: $crybaby;
+}
+
+.ds{
+    width: 70px;
+    text-align: $aligntxt;
+}
+.d0{
+    background-color: #f96585;
+}
+
+.d1{
+    background-color: #f98585;
+}
+
+.d2{
+    background-color: #f9a385;
+}
+
+.d3{
+    background-color: #F9BE85;
+}
+
+.total{
+    width: 90px;
+    text-align: $aligntxt;
+}
+
+.d0,.d1,.d2,.d3{
+    text-align: $aligntxt;
+}
+
+.totalf{
+    text-align: $aligntxt;
+    background-color: $crybaby;
+}
+
+
+.vencido{
+    text-align: $aligntxt;
+    background-color: $crybaby;
+}
+tbody tr:nth-child(-n+5){
+    background-color: #F5F5F5;
+}
+tbody tr:nth-child(-n+4):hover{
+    background-color: #3fc3a2;
+    opacity: 0.95;
+}
+
+
+tbody tr:nth-child(5) td{
+    color: #FFF;
+    background-color: #424242;
+}
+
+
