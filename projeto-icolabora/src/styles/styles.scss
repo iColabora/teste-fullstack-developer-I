@@ -1,0 +1,74 @@
+$D0: #f96585;
+$D1: #f98585;
+$D2: #f9a385;
+$D3: #f9be85;
+$Titulo: #102938;
+$Depois: #3fc3a2;
+$Vencido: #b2ebf2;
+$Total: #f96585;
+$Foot: #424242;
+$White: #ffffff;
+$Antes: #f5f5f5;
+$Back: #4169e1;
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $Back;
+}
+
+//Estilo do Titulo
+#titulo {
+    background-color: $Titulo;
+    color: $White;
+    height: 50px;
+    #tarefa {
+        width: 350px;
+    }
+    .resultados {
+        width: 200px;
+        text-align: center;
+    }
+    .indicadores {
+        width: 100px;
+    }
+}
+
+//Estilo do Corpo da Tabela
+#result-celula {
+    text-align: center;
+    cursor: pointer;
+    #result-tarefa {
+        text-align: left;
+        background-color: $Antes;
+        background-size: 200% 100%;
+        transition: all 0.5s ease;
+        background-position: left;
+        &:hover {
+            background-color: $Depois;
+            background-position: right;
+        }
+    }
+    .result-totais {
+        background-color: $Vencido;
+    }
+    #D0 {
+        background-color: $D0;
+    }
+    #D1 {
+        background-color: $D1;
+    }
+    #D2 {
+        background-color: $D2;
+    }
+    #D3 {
+        background-color: $D3;
+    }
+}
+
+//Estilo em detalhes
+#info {
+    text-align: center;
+    background-color: $Depois;
+}
