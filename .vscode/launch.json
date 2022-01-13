@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "Launch index.html",
+            "file": "${workspaceFolder}/index.html"
+        },
+        {
+            "type": "pwa-chrome",
+            "name": "https://ico-fullstack-test.herokuapp.com/v1/histograma",
+            "request": "launch",
+            "url": "https://ico-fullstack-test.herokuapp.com/v1/histograma"
+        }
+    ]
+}
