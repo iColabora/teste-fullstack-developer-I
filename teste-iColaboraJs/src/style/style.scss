@@ -82,9 +82,16 @@ tbody tr:nth-child(-n+4){
 tbody tr:nth-child(-n+5){
     background-color: #F5F5F5;
 }
+tbody tr:nth-child(-n+4){
+    background: linear-gradient(to left, #F5F5F5 50%,#3fc3a2 50%);
+    background-size: 200% 100%;
+    background-position:right bottom;
+    transition:all 1s ease;
+}
+
 tbody tr:nth-child(-n+4):hover{
-    background-color: #3fc3a2;
-    opacity: 0.95;
+    background-position:left bottom;
+    opacity: 0.9;
 }
 
 
@@ -94,3 +101,11 @@ tbody tr:nth-child(5) td{
 }
 
 
+.detalhes{
+    text-align: center;
+}
+
+.details td{
+    width: 50px;
+    word-break: break-all;
+}
