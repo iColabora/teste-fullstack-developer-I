@@ -35,10 +35,26 @@ body {
     }
 }
 
-//Estilo do Corpo da Tabela
-#result-celula {
+
+#result-5{
+    background-color: #424242;
+    height: 35px;
+    color: $White;
+    cursor: default;
+    text-align: center;
+    #result-tarefa{
+        text-align: left;
+    }
+}
+
+
+// Estilo do Corpo da Tabela
+#result-1, #result-2, #result-3, #result-4 {
     text-align: center;
     height: 35px;
+
+
+    
     
     #result-tarefa {
         cursor: pointer;
@@ -66,10 +82,12 @@ body {
     #D3 {
         background-color: $D3;
     }
+    
 }
 
+
 //Estilo em detalhes
-#info {
-    text-align: center;
-    background-color: $Depois;
-}
+// #info {
+//     text-align: center;
+//     background-color: $Depois;
+// }
