@@ -1,0 +1,82 @@
+table {
+    position: relative;
+    left: 50px;
+    top: 200px;
+    border: 1px solid rgba(0,0,0,0.1);;
+    border-collapse: collapse;
+    font-family: monospace;
+    font-weight: bolder;
+}
+
+tr:first-child{
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+tr:last-child td{
+    border: none;
+    background-color: rgba(0,0,0,0.7);
+    color: ghostwhite;
+}
+
+th {
+    height: 40px;
+    background-color: rgba(0,36,56,0.95);
+    color: ghostwhite;
+}
+
+th:nth-child(1) {
+    width: 400px;
+    text-align: left;
+    text-indent: 10px;
+}
+
+th:nth-child(2) {
+    width: 230px;
+}
+
+th:nth-child(n+3):nth-child(-n+6) {
+    width: 100px;
+}
+
+th:last-child {
+    width: 130px;
+}
+
+td {
+    border: 1px solid rgba(0,0,0,0.1);
+    height: 40px;
+    color: darkslategray;
+}
+
+td:first-child {
+    text-indent: 10px;
+    background-color: ghostwhite;
+}
+
+td:nth-child(n+2) {
+    text-align: center;
+}
+
+td:nth-child(2) {
+    background-color: paleturquoise;
+}
+
+td:nth-child(3) {
+    background-color: #f96585;
+}
+
+td:nth-child(4) {
+    background-color: #f98585;
+}
+
+td:nth-child(5) {
+    background-color: #f9a585;
+}
+
+td:nth-child(6) {
+    background-color: #f9c585;
+}
+
+td:nth-child(7) {
+    background-color: paleturquoise;
+}
