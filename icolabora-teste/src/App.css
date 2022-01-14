@@ -1,0 +1,114 @@
+.table { 
+  border-spacing: 0;
+  width: 1000px;
+  height: 150px;
+  text-align: left;
+  margin: 2% 0 0 3%;
+}
+
+.thead, .detailsHead { 
+  height: 25px;
+  color: white;
+  background-color: #102938;
+}
+
+
+.tdhead {
+  padding: 10px 5px 10px 15px;
+}
+
+.tdd0 {
+  background-color:  #f96585 ;
+}
+.tdd1 {
+  background-color: #F98585;
+}
+.tdd2 {
+  background-color: #F9A385;
+}
+.tdd3 {
+  background-color: #F9BE85;
+}
+
+.tdbody {
+  color: #4c4f52;
+  font-weight: bold;
+  border-bottom: 1px solid grey;
+  width: 100px;
+  padding: 10px 5px 10px 10px;
+  text-align: center;
+}
+
+.tdbody:hover {
+  cursor: pointer;
+  opacity: 0.85;  
+}
+
+.tdbody:active {
+  opacity: 0.7;
+  box-shadow: 0 3px #666;
+  transform: translateY(2px);   
+}
+
+.vencido {
+  width: 200px;
+}
+
+.tdtask {
+  border-bottom: 1px solid grey;
+  font-weight: bold;
+  padding-left: 20px;
+  color: #4c4f52;
+  text-align: left;
+  width: 500px;
+  background: linear-gradient(to left, #f7f7f7 50%, #3fc3a2 50%) right;
+  background-size: 200%;
+  transition: .6s ease-out;
+}
+
+.tdtask:hover {
+  cursor: unset;
+}
+
+.tdtotal, .tdvencido, .tdtotal:hover{
+  opacity: unset;
+  background-color: rgb(178,235,242) ;
+}
+
+.trbody3 {
+  border: none;
+}
+
+.trbody4, .tdbody4, .tdbody4:hover , .tdbody4:active{
+  box-shadow: unset;
+  transform: unset;
+  opacity: unset;
+  cursor: default;
+  background: none;
+  color: white;
+  border: none;
+  background-color: rgb(66, 66, 66);
+}
+
+.tdtotal:active {
+  background-color: rgb(178,235,242);
+  box-shadow: unset;
+  transform: unset;
+  opacity: unset;
+  cursor: default;
+  background: none;
+}
+
+
+.tdtask:hover {
+  opacity: unset;
+  background-position: bottom left;
+}
+
+.detalhes {
+  margin-top: 5px;
+  font-weight: 500;
+  border-bottom: 1px solid grey;
+  color: black;
+  background-color: #f9f9f9;
+}
