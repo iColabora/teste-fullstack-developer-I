@@ -36,16 +36,6 @@ body {
 }
 
 
-#result-5{
-    background-color: #424242;
-    height: 35px;
-    color: $White;
-    cursor: default;
-    text-align: center;
-    #result-tarefa{
-        text-align: left;
-    }
-}
 
 
 // Estilo do Corpo da Tabela
@@ -65,7 +55,9 @@ body {
         transition: all .3s ease-out;
         &:hover {
             background-position: left bottom;
+            
         }
+
     }
     .result-totais {
         background-color: $Vencido;
@@ -83,6 +75,23 @@ body {
         background-color: $D3;
     }
     
+}
+
+#detail1:active{
+    #detail2{
+        display: none;
+    }
+}
+
+#result-5{
+    background-color: #424242;
+    height: 35px;
+    color: $White;
+    cursor: default;
+    text-align: center;
+    #result-tarefa{
+        text-align: left;
+    }
 }
 
 

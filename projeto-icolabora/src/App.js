@@ -1,28 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import api from "./services/Api";
 import './styles/styles.scss'
-import Collapsible from 'react-collapsible'
 
 export default function App() {
   const [atendimento, setAtendimento] = useState([]);
   const [isShow, setShow] = useState(false);
+  const [detail1, setDetail] = useState()
 
   /*Click para mostrar os detalhes*/
   const handleClick = () => {
     setShow(!isShow)     
+
+    const detail1 = document.getElementById('detail-1')
+    const detail2 = document.getElementById('detail-2')
+    const detail3 = document.getElementById('detail-3')
+    const detail4 = document.getElementById('detail-4')
+
+    console.log(detail1)
+    console.log(isShow)
+    
   }
-
-  function Detalhes(props) {
-    const { details } = props;
-
-    return (
-      <tr>
-         <p>{details.SLA}</p>
-      </tr>
-     
-    )
-  }
-
 
   /*Chamada da API e passando para setAtendimento*/
   useEffect(() => {
@@ -54,7 +51,7 @@ export default function App() {
          {/*Usei um Map para percorrer o JSON e organizar dentro da tabela*/}
           {atendimento.map((dado, id) => (
             <>
-              <tr key={id} id={`result-${id+1}`} onClick={Detalhes}>
+              <tr key={id} id={`result-${id+1}`}>
                 <td onClick={handleClick} id="result-tarefa">{dado.TAREFA}</td>
                 <td className="result-totais">{dado.VENCIDO}</td>
                 <td id="D0">{dado.D0}</td>
@@ -66,15 +63,17 @@ export default function App() {
               {/*Para conseguir abrir os detalhes, criei uma Condição Ternaria,
       se for ao clicar na tarefa ira mudar isShow para True e mostra os detalhes, e false esconde
       os detalhes, porem não consegui deixar para mostrar os detalhes por tarefa
+      Infelizmente, não consegui deixar para mostrar somente quando clicar na celular
+      Tentei criar uma ID, para mudar a propriedade do display das outras div
     */}
-              {isShow ?
-                <>
+              {isShow &&
+                <div id={`detail-${id+1}`}>
                   {dado.DRILLDOWN.map((sla) => {
                     return (
-                      <Detalhes details={sla} />
+                        <p>{sla.SLA}</p>                    
                     )
                   })}
-                </> : <></>}
+                </div>}
 
             </>
           ))}
