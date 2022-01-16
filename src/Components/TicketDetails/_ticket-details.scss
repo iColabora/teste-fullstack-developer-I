@@ -1,0 +1,139 @@
+$border-radius-table: 5px;
+$color-form-highlight: hsl(0, 0%, 0%);
+$padding-header: 14px 0;
+$padding-lines: 10px 0;
+
+$grid-template-disp: 15% 25% 10% 9% 10% 8% 8% 15%;
+
+.ticket_details{
+	width: 90%;
+    max-width: 1200px;
+    overflow: auto;
+    margin-bottom: 25px;
+
+    &__title{
+        border-top-left-radius: $border-radius-table;
+        border-top-right-radius: $border-radius-table;
+        background-color: hsl(0, 0%, 100%);
+        padding: 18px 10px;
+        min-width: 1200px;
+
+        h1 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        span{
+            padding-left: 2px;
+        }
+
+        .sub_title {
+            color:hsl(216, 100%, 55%)
+        }
+    }
+
+    
+}
+
+.container {
+	justify-content:center;
+	align-items:center;
+    min-width: 1200px;
+
+    .table {
+        width:100%;
+        border:1px solid $color-form-highlight;
+
+        .table-header {
+            display:grid;
+            width:100%;
+            background:hsl(0, 0%, 0%);
+            grid-template-columns: $grid-template-disp;
+            padding: 10px 0;
+            font-size: 0.9em;
+            align-items: center;
+            justify-items: center;
+
+            &:first-child {
+                justify-items: start;
+            }
+
+            .header__item {
+                text-transform:uppercase;
+
+                &:first-child {
+                    text-align: start;
+                    padding-left: 15px;
+                }
+
+                .filter__link {
+                    color:hsl(0, 0%, 100%);
+                    text-decoration: none;
+                    position:relative;
+                    display:inline-block;
+                }
+            }
+        }
+
+        .table-content{
+            font-size: 0.825em;
+            align-items: center;
+            border-bottom-left-radius: $border-radius-table;
+            border-bottom-right-radius: $border-radius-table;
+            max-height: 40vh;
+            overflow: auto;
+
+            .table-row {
+                display:grid;
+                width:100%;
+                grid-template-columns: $grid-template-disp;
+                background: hsl(0, 0%, 100%);
+                border-bottom: 1px solid #000;
+                user-select: none;
+            
+                &:hover{
+                    .table-data{
+                        filter: brightness(80%);
+                    }
+                }
+            
+                &:last-child {
+                    border-bottom: 0px;
+                }
+            }
+
+            .table-data{
+                background: hsla(0deg, 0%, 73%, 0.2%);
+                min-height: 42px;
+                display: grid;
+                align-content: center;
+            }
+
+            .table-data, .header__item {
+                flex: 1 1 20%;
+                text-align: center;
+            
+                &:first-child {
+                    text-align: start;
+                    padding-left: 15px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
