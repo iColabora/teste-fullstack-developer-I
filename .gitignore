@@ -2,5 +2,4 @@
 node_modules
 public/bundle.*
 .history
-package-lock.json
 yarn.lock
