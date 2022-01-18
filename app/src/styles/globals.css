@@ -5,3 +5,18 @@
 #app {
     padding: 0;
 }
+
+:root {
+    --gray: #38332E;
+    --gray-light: #5f564c;
+    --blue-dark: #22333B;
+
+    /* border radius */
+    --radius-lg: 20px;
+    --radius-md: 15px;
+    --radius-sm: 10px;
+
+    /* Spacement */
+    --spacing-xxxs: .5rem;
+    --spacing-xxs: 1rem;
+}

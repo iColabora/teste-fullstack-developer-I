@@ -13,32 +13,23 @@
             </tr>
             <tr :key="index" v-for="(key,index) in data" :class="last(index)" >
                 <td class="task" :class="last(index)">{{key.TAREFA}}</td>
-                <td @click="showDrill(index, 'VENCIDO')">{{key.VENCIDO}}</td>
-                <td @click="showDrill(index, 'D0')">{{key.D0}}</td>
-                <td @click="showDrill(index, 'D1')">{{key.D1}}</td>
-                <td @click="showDrill(index,'D2')">{{key.D2}}</td>
-                <td @click="showDrill(index,'D3')">{{key.D3}}</td>
-                <td>{{key.TOTAL}}</td>
+                <td @click="showDrill(index, 'VENCIDO')" class="vencido" :class="last(index)">{{key.VENCIDO}}</td>
+                <td @click="showDrill(index, 'D0')" class="d0" :class="last(index)">{{key.D0}}</td>
+                <td @click="showDrill(index, 'D1')" class="d1" :class="last(index)">{{key.D1}}</td>
+                <td @click="showDrill(index,'D2')" class="d2" :class="last(index)">{{key.D2}}</td>
+                <td @click="showDrill(index,'D3')" class="d3" :class="last(index)">{{key.D3}}</td>
+                <td class="total" :class="last(index)">{{key.TOTAL}}</td>
                 <td>{{key.STT}}</td>
-
             </tr>
-            <!-- <tr class="finalTh">
-                <td>{{ data[4].TAREFA }}</td>
-                <td>{{ data[4].VENCIDO }}</td>
-                <td>{{ data[4].D0 }}</td>
-                <td>{{ data[4].D1 }}</td>
-                <td>{{ data[4].D2 }}</td>
-                <td>{{ data[4].D3 }}</td>
-                <td>{{ data[4].TOTAL }}</td>
-                <td>{{ data[4].STT }}</td>
-            </tr> -->
         </table>
-            {{ drillAttributes }}
+
+        <Modal :modalVisible="modalVisible" :data="drillAttributes" />
     </div>
 </template>
 
 <script>
 import axios from 'axios'
+import Modal from './Modal.vue'
 
 export default {
     name: 'DrillDown',  
@@ -48,7 +39,11 @@ export default {
             data: {},
             drillAttributes: [],
             counter: 0,
+            modalVisible: true,
         }
+    },
+    components: {
+        Modal,
     },
     methods: {
         async getData(){
@@ -62,6 +57,9 @@ export default {
         last(index){
             console.log(this.data.lenght)
             return index == this.data.length -1 ? 'last' : ''
+        },
+        handleShowModal(){
+            this.modalVisible = !this.modalVisible
         }
 
     },
@@ -79,6 +77,8 @@ export default {
 <style scoped>
 .container {
     width: 90%;
+    position: relative;
+    z-index: 0;
 }
 
 table {
@@ -92,12 +92,8 @@ td {
     padding: 1rem;
 }
 .mainTopTh {
-    background: #22333B;
+    background: var(--blue-dark);
     color: #fff;
-}
-.last {
-    background: #38332E !important;
-    color: #fff  !important;
 }
 .d0 {
     background: #f96585;
@@ -115,8 +111,11 @@ td {
     background: #41B7C1;
 }
 
+.last {
+    background: var(--gray) !important;
+    color: #fff  !important;
+}
 .task {
-    /* background: #3fc3a2; */
     background: linear-gradient(to right, #3fc3a2  50%, #fff 50%);
     background-size: 200% 100%;
     background-position:right bottom;
