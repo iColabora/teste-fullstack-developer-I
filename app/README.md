@@ -1,23 +1,14 @@
 # app
 
-## Project setup
+## Para instalar as dependências do projeto
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Compilação e auto-reload para desenvolvimento
 ```
 yarn dev
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
 
 
