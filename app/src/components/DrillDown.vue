@@ -1,79 +1,96 @@
 <template>
-    <div class="container">
-        <table>
-          <thead>
-            <tr class="mainTopTh">
-                <td>Tarefa</td>            
-                <td>Vencido</td>                 
-                <td>D0</td>
-                <td>D1</td>
-                <td>D2</td>
-                <td>D3</td>
-                <td>Total</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr :key="index" v-for="(key,index) in data" :class="last(index)" >
-                <td class="task" :class="last(index)">{{key.TAREFA}}</td>
-                <td @click="showDrill(index, 'VENCIDO')" class="vencido" :class="last(index)">{{key.VENCIDO}}</td>
-                <td @click="showDrill(index, 'D0')" class="d0" :class="last(index)">{{key.D0}}</td>
-                <td @click="showDrill(index, 'D1')" class="d1" :class="last(index)">{{key.D1}}</td>
-                <td @click="showDrill(index,'D2')" class="d2" :class="last(index)">{{key.D2}}</td>
-                <td @click="showDrill(index,'D3')" class="d3" :class="last(index)">{{key.D3}}</td>
-                <td class="total" :class="last(index)">{{key.TOTAL}}</td>
-            </tr>
+  <div class="container">
+    <table>
+      <thead>
+        <tr class="mainTopTh">
+          <td>Tarefa</td>
+          <td>Vencido</td>
+          <td>D0</td>
+          <td>D1</td>
+          <td>D2</td>
+          <td>D3</td>
+          <td>Total</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr :key="index" v-for="(key, index) in data" :class="last(index)">
+          <td class="task" :class="last(index)">{{ key.TAREFA }}</td>
+          <td
+            @click="showDrill(index, 'VENCIDO')"
+            class="vencido"
+            :class="last(index)"
+          >
+            {{ key.VENCIDO }}
+          </td>
+          <td @click="showDrill(index, 'D0')" class="d0" :class="last(index)">
+            {{ key.D0 }}
+          </td>
+          <td @click="showDrill(index, 'D1')" class="d1" :class="last(index)">
+            {{ key.D1 }}
+          </td>
+          <td @click="showDrill(index, 'D2')" class="d2" :class="last(index)">
+            {{ key.D2 }}
+          </td>
+          <td @click="showDrill(index, 'D3')" class="d3" :class="last(index)">
+            {{ key.D3 }}
+          </td>
+          <td class="total" :class="last(index)">{{ key.TOTAL }}</td>
+        </tr>
+      </tbody>
+    </table>
 
-          </tbody>
-        </table>
-
-        <Modal v-show="modalVisible" :data="drillAttributes"  :handleShowModal="handleShowModal"/>
-    </div>
+    <Modal
+      v-show="modalVisible"
+      :data="drillAttributes"
+      :handleShowModal="handleShowModal"
+    />
+  </div>
 </template>
 
 <script>
-import axios from 'axios'
-import Modal from './Modal.vue'
+import axios from "axios";
+import Modal from "./Modal.vue";
 
 export default {
-    name: 'DrillDown',  
-    
-    data(){
-        return {
-            data: {},
-            drillAttributes: [],  
-            modalVisible: false,
-        }
-    },
-    components: {
-        Modal,
-    },
-    methods: {
-        async getData(){
-            await axios.get('https://ico-fullstack-test.herokuapp.com/v1/histograma')
-                    .then(res => this.data = res.data)
-        },
+  name: "DrillDown",
 
-        showDrill(indice, key){
-            if (this.last(indice) === ''){
-              this.drillAttributes = this.data[indice].DRILLDOWN.filter(item => item.REGUA == key)
-              this.handleShowModal()
-            }
-        },
-        last(index){
-            return index == this.data.length -1 ? 'last' : ''
-        },
-        handleShowModal(){
-            this.modalVisible = !this.modalVisible
-        }
-
+  data() {
+    return {
+      data: {},
+      drillAttributes: [],
+      modalVisible: false,
+    };
+  },
+  components: {
+    Modal,
+  },
+  methods: {
+    async getData() {
+      await axios
+        .get("https://ico-fullstack-test.herokuapp.com/v1/histograma")
+        .then((res) => (this.data = res.data));
     },
-    beforeMount(){
-        this.getData()
-    },
-}
 
+    showDrill(indice, key) {
+      if (this.last(indice) === "") {
+        this.drillAttributes = this.data[indice].DRILLDOWN.filter(
+          (item) => item.REGUA == key
+        );
+        this.handleShowModal();
+      }
+    },
+    last(index) {
+      return index == this.data.length - 1 ? "last" : "";
+    },
+    handleShowModal() {
+      this.modalVisible = !this.modalVisible;
+    },
+  },
+  beforeMount() {
+    this.getData();
+  },
+};
 </script>
-
 
 <style lang="scss">
 .container {
@@ -103,7 +120,6 @@ export default {
       background: var(--blue-dark);
       color: #fff;
 
-        
       td {
         cursor: unset !important;
       }
@@ -142,6 +158,5 @@ export default {
       cursor: unset;
     }
   }
-
 }
 </style>

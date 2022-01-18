@@ -5,14 +5,14 @@
 </template>
 
 <script>
-import './styles/globals.css'
-import DrillDown from './components/DrillDown'
+import "./styles/globals.css";
+import DrillDown from "./components/DrillDown";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    DrillDown
-  }
-}
+    DrillDown,
+  },
+};
 </script>
 
 <style>

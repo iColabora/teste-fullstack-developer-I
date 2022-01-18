@@ -1,31 +1,31 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 #app {
-    padding: 0;
+  padding: 0;
 }
 
 :root {
-    --gray: #424242;
-    --gray-light: #303030;
-    --blue-dark: #102938;
-    --cyan-light: #B2EBF2;
-    --cyan-light-hover: #ACE4EA;
-    --cyan-dark: #3FC3A2;
-    --red: #F96585;
-    --red-light: #F98585;
-    --orange: #F9A385;
-    --orange-hover: #F19E81;
-    --yellow: #F9BE85;
-    --yellow-hover: #F9BE85;
+  --gray: #424242;
+  --gray-light: #303030;
+  --blue-dark: #102938;
+  --cyan-light: #b2ebf2;
+  --cyan-light-hover: #ace4ea;
+  --cyan-dark: #3fc3a2;
+  --red: #f96585;
+  --red-light: #f98585;
+  --orange: #f9a385;
+  --orange-hover: #f19e81;
+  --yellow: #f9be85;
+  --yellow-hover: #f9be85;
 
-    /* border radius */
-    --radius-lg: 20px;
-    --radius-md: 15px;
-    --radius-sm: 10px;
+  /* border radius */
+  --radius-lg: 20px;
+  --radius-md: 15px;
+  --radius-sm: 10px;
 
-    /* Spacement */
-    --spacing-xxxs: .5rem;
-    --spacing-xxs: 1rem;
+  /* Spacement */
+  --spacing-xxxs: 0.5rem;
+  --spacing-xxs: 1rem;
 }
