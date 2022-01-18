@@ -88,6 +88,7 @@ export default {
     tbody {
       td:hover {
         opacity: 0.9;
+        transition: all 0.3s ease;
       }
     }
     tr {
@@ -137,9 +138,10 @@ export default {
 
     .task:hover {
       background-position: left bottom;
-      transition: all 1.5s ease;
+      transition: all 1s ease;
       cursor: unset;
     }
   }
+
 }
 </style>

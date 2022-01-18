@@ -1,40 +1,42 @@
 <template>
-    <div class="modalContainer">
-        <div class="title">
-            <h1>Detalhes</h1>
-            <p @click.prevent="handleShowModal">X</p>
-        </div>
-        <div class="table">
-            <table>
-                <thead>
-                    <tr class="mainLine">
-                        <td>Instância</td>   
-                        <td>Status</td>     
-                        <td>Protocolo</td>      
-                        <td>Régua</td>  
-                        <td>Início</td>
-                        <td>SLA</td>
-                        <td>Tipo Solicitação</td>
-                        <td>Operador</td>
-                    </tr>
+    <transition name="fade">
+        <div class="modalContainer">
+            <div class="title">
+                <h1>Detalhes</h1>
+                <p @click.prevent="handleShowModal">X</p>
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr class="mainLine">
+                            <td>Instância</td>   
+                            <td>Status</td>     
+                            <td>Protocolo</td>      
+                            <td>Régua</td>  
+                            <td>Início</td>
+                            <td>SLA</td>
+                            <td>Tipo Solicitação</td>
+                            <td>Operador</td>
+                        </tr>
 
-                </thead>
-                <tbody>
-                    <tr :key="index" v-for="(key, index) in data" class="">
-                        <td><p>{{key.INSTANCIA}}</p></td>
-                        <td><p>{{key.STATUS}}</p></td>
-                        <td><p>{{key.PROTOCOLO}}</p></td>
-                        <td><p>{{key.REGUA}}</p></td>
-                        <td><p>{{key.inicio}}</p></td>
-                        <td><p>{{key.SLA}}</p></td>
-                        <td><p>{{key.TIPO_SOLICITACAO}}</p></td>
-                        <td><p>{{key.operador}}</p></td>
-                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr :key="index" v-for="(key, index) in data" class="">
+                            <td><p>{{key.INSTANCIA}}</p></td>
+                            <td><p>{{key.STATUS}}</p></td>
+                            <td><p>{{key.PROTOCOLO}}</p></td>
+                            <td><p>{{key.REGUA}}</p></td>
+                            <td><p>{{key.inicio}}</p></td>
+                            <td><p>{{key.SLA}}</p></td>
+                            <td><p>{{key.TIPO_SOLICITACAO}}</p></td>
+                            <td><p>{{key.operador}}</p></td>
+                        </tr>
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
+    </transition>
 </template>
 <script>
 export default {
@@ -65,6 +67,7 @@ export default {
         z-index: 3;
         top: 0;
         right: 10%;
+        transition: all 1s ease;
         .title {
             margin-bottom: var(--spacing-xxs);
             width: 100%;
@@ -106,5 +109,10 @@ export default {
 
     }
 
-    
+    .fade-enter-active, .fade-leave-active {
+    transition: opacity .2s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+    opacity: 0
+}
 </style>
