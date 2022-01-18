@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <table>
+          <thead>
             <tr class="mainTopTh">
                 <td>Tarefa</td>            
                 <td>Vencido</td>                 
@@ -9,8 +10,9 @@
                 <td>D2</td>
                 <td>D3</td>
                 <td>Total</td>
-                <td>STT</td>
             </tr>
+          </thead>
+          <tbody>
             <tr :key="index" v-for="(key,index) in data" :class="last(index)" >
                 <td class="task" :class="last(index)">{{key.TAREFA}}</td>
                 <td @click="showDrill(index, 'VENCIDO')" class="vencido" :class="last(index)">{{key.VENCIDO}}</td>
@@ -19,8 +21,9 @@
                 <td @click="showDrill(index,'D2')" class="d2" :class="last(index)">{{key.D2}}</td>
                 <td @click="showDrill(index,'D3')" class="d3" :class="last(index)">{{key.D3}}</td>
                 <td class="total" :class="last(index)">{{key.TOTAL}}</td>
-                <td>{{key.STT}}</td>
             </tr>
+
+          </tbody>
         </table>
 
         <Modal v-show="modalVisible" :data="drillAttributes"  :handleShowModal="handleShowModal"/>
@@ -37,8 +40,7 @@ export default {
     data(){
         return {
             data: {},
-            drillAttributes: [],
-            counter: 0,
+            drillAttributes: [],  
             modalVisible: false,
         }
     },
@@ -52,9 +54,10 @@ export default {
         },
 
         showDrill(indice, key){
-            this.drillAttributes = this.data[indice].DRILLDOWN.filter(item => item.REGUA == key)
-            this.handleShowModal()
-            console.log(this.modalVisible)
+            if (this.last(indice) === ''){
+              this.drillAttributes = this.data[indice].DRILLDOWN.filter(item => item.REGUA == key)
+              this.handleShowModal()
+            }
         },
         last(index){
             return index == this.data.length -1 ? 'last' : ''
@@ -81,7 +84,12 @@ export default {
   table {
     border-collapse: collapse;
     width: 100%;
-
+    background-color: var(--gray);
+    tbody {
+      td:hover {
+        opacity: 0.9;
+      }
+    }
     tr {
       box-shadow: 0 0 1px gray;
       td {
@@ -89,9 +97,15 @@ export default {
         cursor: pointer;
       }
     }
+
     .mainTopTh {
       background: var(--blue-dark);
       color: #fff;
+
+        
+      td {
+        cursor: unset !important;
+      }
     }
     .d0 {
       background: var(--red);
@@ -113,6 +127,7 @@ export default {
     .last {
       background: var(--gray) !important;
       color: #fff !important;
+      cursor: unset;
     }
     .task {
       background: linear-gradient(to right, var(--cyan-dark) 50%, #fff 50%);

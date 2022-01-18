@@ -6,7 +6,7 @@
 
 <script>
 import './styles/globals.css'
-import DrillDown from './components/DrillDown.vue'
+import DrillDown from './components/DrillDown'
 export default {
   name: 'App',
   components: {

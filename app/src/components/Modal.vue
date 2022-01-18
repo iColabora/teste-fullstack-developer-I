@@ -6,26 +6,32 @@
         </div>
         <div class="table">
             <table>
-                <tr class="mainLine">
-                    <td>Instância</td>   
-                    <td>Status</td>     
-                    <td>Protocolo</td>      
-                    <td>Régua</td>  
-                    <td>Início</td>
-                    <td>SLA</td>
-                    <td>Tipo Solicitação</td>
-                    <td>Operador</td>
-                </tr>
-                <tr :key="index" v-for="(key, index) in data" class="">
-                    <td>{{key.INSTANCIA}}</td>
-                    <td>{{key.STATUS}}</td>
-                    <td>{{key.PROTOCOLO}}</td>
-                    <td>{{key.REGUA}}</td>
-                    <td>{{key.inicio}}</td>
-                    <td>{{key.SLA}}</td>
-                    <td>{{key.TIPO_SOLICITACAO}}</td>
-                    <td>{{key.operador}}</td>
-                </tr>
+                <thead>
+                    <tr class="mainLine">
+                        <td>Instância</td>   
+                        <td>Status</td>     
+                        <td>Protocolo</td>      
+                        <td>Régua</td>  
+                        <td>Início</td>
+                        <td>SLA</td>
+                        <td>Tipo Solicitação</td>
+                        <td>Operador</td>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr :key="index" v-for="(key, index) in data" class="">
+                        <td><p>{{key.INSTANCIA}}</p></td>
+                        <td><p>{{key.STATUS}}</p></td>
+                        <td><p>{{key.PROTOCOLO}}</p></td>
+                        <td><p>{{key.REGUA}}</p></td>
+                        <td><p>{{key.inicio}}</p></td>
+                        <td><p>{{key.SLA}}</p></td>
+                        <td><p>{{key.TIPO_SOLICITACAO}}</p></td>
+                        <td><p>{{key.operador}}</p></td>
+                    </tr>
+
+                </tbody>
             </table>
         </div>
     </div>
@@ -74,26 +80,30 @@ export default {
             }
         }
         .table {
-            height: 300px;
+            height: 400px;
             overflow: auto;
             table {
                 border-collapse: collapse;
                 width: 100%;
                 background: #fff;
                 border-radius: var(--radius-md);
-    
-                .mainLine {
-                    color: #fff;
-                    background: var(--gray-light);
-                }
-    
-                td {
-                    padding: var(--spacing-xxxs);
-                    
-                }
-            }
 
+                tbody {
+                    
+                    tr:hover {
+                        background-color: rgba(0,0,0,0.2);
+                    }
+                }
+                thead {
+                    .mainLine {
+                        color: #fff;
+                        background: var(--gray-light);
+                        cursor: unset;
+                    }
+                }
+            }   
         }
+
     }
 
     
