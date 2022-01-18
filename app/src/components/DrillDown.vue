@@ -11,47 +11,18 @@
                 <td>Total</td>
                 <td>STT</td>
             </tr>
-            <tr>
-                <td class="task">{{ data[0].TAREFA }}</td>
-                <td class="vencido">{{ data[0].VENCIDO }}</td>
-                <td class="d0">{{ data[0].D0 }}</td>
-                <td class="d1">{{ data[0].D1 }}</td>
-                <td class="d2">{{ data[0].D2 }}</td>
-                <td class="d3">{{ data[0].D3 }}</td>
-                <td class="total">{{ data[0].TOTAL }}</td>
-                <td>{{ data[0].STT }}</td>
+            <tr :key="index" v-for="(key,index) in data" :class="last(index)" >
+                <td class="task" :class="last(index)">{{key.TAREFA}}</td>
+                <td @click="showDrill(index, 'VENCIDO')">{{key.VENCIDO}}</td>
+                <td @click="showDrill(index, 'D0')">{{key.D0}}</td>
+                <td @click="showDrill(index, 'D1')">{{key.D1}}</td>
+                <td @click="showDrill(index,'D2')">{{key.D2}}</td>
+                <td @click="showDrill(index,'D3')">{{key.D3}}</td>
+                <td>{{key.TOTAL}}</td>
+                <td>{{key.STT}}</td>
+
             </tr>
-            <tr>
-                <td class="task">{{ data[1].TAREFA }}</td>
-                <td class="vencido">{{ data[1].VENCIDO }}</td>
-                <td class="d0">{{ data[1].D0 }}</td>
-                <td class="d1">{{ data[1].D1 }}</td>
-                <td class="d2">{{ data[1].D2 }}</td>
-                <td class="d3">{{ data[1].D3 }}</td>
-                <td class="total">{{ data[1].TOTAL }}</td>
-                <td>{{ data[1].STT }}</td>
-            </tr>
-            <tr>
-                <td class="task">{{ data[2].TAREFA }}</td>
-                <td class="vencido">{{ data[2].VENCIDO }}</td>
-                <td class="d0">{{ data[2].D0 }}</td>
-                <td class="d1">{{ data[2].D1 }}</td>
-                <td class="d2">{{ data[2].D2 }}</td>
-                <td class="d3">{{ data[2].D3 }}</td>
-                <td class="total">{{ data[2].TOTAL }}</td>
-                <td>{{ data[2].STT }}</td>
-            </tr>
-            <tr>
-                <td class="task">{{ data[3].TAREFA }}</td>
-                <td class="vencido">{{ data[3].VENCIDO }}</td>
-                <td class="d0">{{ data[3].D0 }}</td>
-                <td class="d1">{{ data[3].D1 }}</td>
-                <td class="d2">{{ data[3].D2 }}</td>
-                <td class="d3">{{ data[3].D3 }}</td>
-                <td class="total">{{ data[3].TOTAL }}</td>
-                <td>{{ data[3].STT }}</td>
-            </tr>
-            <tr class="finalTh">
+            <!-- <tr class="finalTh">
                 <td>{{ data[4].TAREFA }}</td>
                 <td>{{ data[4].VENCIDO }}</td>
                 <td>{{ data[4].D0 }}</td>
@@ -60,8 +31,9 @@
                 <td>{{ data[4].D3 }}</td>
                 <td>{{ data[4].TOTAL }}</td>
                 <td>{{ data[4].STT }}</td>
-            </tr>
+            </tr> -->
         </table>
+            {{ drillAttributes }}
     </div>
 </template>
 
@@ -73,18 +45,32 @@ export default {
     
     data(){
         return {
-            data: {}
+            data: {},
+            drillAttributes: [],
+            counter: 0,
         }
     },
     methods: {
         async getData(){
             await axios.get('https://ico-fullstack-test.herokuapp.com/v1/histograma')
                     .then(res => this.data = res.data)
+        },
+
+        showDrill(indice, key){
+            this.drillAttributes = this.data[indice].DRILLDOWN.filter(item => item.REGUA == key)
+        },
+        last(index){
+            console.log(this.data.lenght)
+            return index == this.data.length -1 ? 'last' : ''
         }
+
     },
     beforeMount(){
         this.getData()
-        console.log(this.data)
+    },
+
+    computed: {
+        
     }
 }
 
@@ -109,9 +95,9 @@ td {
     background: #22333B;
     color: #fff;
 }
-.finalTh {
-    background: #38332E;
-    color: #fff;
+.last {
+    background: #38332E !important;
+    color: #fff  !important;
 }
 .d0 {
     background: #f96585;
