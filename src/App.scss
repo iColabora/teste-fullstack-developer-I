@@ -1,0 +1,130 @@
+$white: #fff;
+$navyBlueBkgd: #102938;
+$yellowBkgd: #f1c40f;
+$lightBlue: #b2ebf2;
+$fontFamily: Arial, Helvetica, sans-serif;
+$opacity: 0.8;
+$basicSize: 1.2rem;
+$borderRadius: 5px;
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  font-family: $fontFamily;
+}
+.container {
+  text-align: center;
+  text-transform: uppercase;
+  padding: $basicSize;
+  font-size: $basicSize;
+}
+.header {
+  padding: $basicSize;
+  text-align: center;
+  background: $yellowBkgd;
+  font-weight: bold;
+}
+.table {
+  width: 90%;
+  margin: auto;
+  margin-top: $basicSize;
+
+  thead tr {
+    height: 40px;
+    background: $navyBlueBkgd;
+    color: white;
+  }
+
+  tbody tr td {
+    text-align: center;
+    padding: 10px;
+  }
+}
+td:hover {
+  opacity: $opacity;
+}
+.services {
+  border-bottom: 1px solid $navyBlueBkgd;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    opacity: $opacity;
+    background-color: #3fc3a2;
+  }
+}
+.serviceDue {
+  background-color: $lightBlue;
+}
+.DZero {
+  background-color: #f96585;
+}
+.DOne {
+  background-color: #f98585;
+}
+.DTwo {
+  background-color: #f9a385;
+}
+.DThree {
+  background-color: #f7be84;
+}
+.total {
+  background-color: $lightBlue;
+}
+.blueTotal {
+  background-color: $navyBlueBkgd;
+  color: white;
+}
+.row {
+  @include flexCenter();
+  margin-top: $basicSize;
+}
+.modalFila {
+  @include flexCenter();
+  background-color: $yellowBkgd;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.modalTitle {
+  background-color: $navyBlueBkgd;
+  color: $white;
+  padding: 10px;
+  font-weight: bold;
+  font-size: $basicSize;
+  margin-top: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.modalCard {
+  list-style-type: none;
+  border: 1px dotted $navyBlueBkgd;
+  text-align: left;
+  padding: 25px;
+  border-radius: $borderRadius;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 15vw;
+}
+.btnModal {
+  background-color: $yellowBkgd;
+  color: $navyBlueBkgd;
+  cursor: pointer;
+  border: none;
+  border-radius: $borderRadius;
+  padding: 8px;
+  width: 10vw;
+  font-size: 1rem;
+  text-transform: uppercase;
+
+  &:hover {
+    filter: brightness(1.1);
+    font-weight: bold;
+  }
+}
