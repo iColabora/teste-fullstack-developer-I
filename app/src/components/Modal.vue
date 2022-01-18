@@ -1,5 +1,5 @@
 <template>
-    <div v-if="modalVisible" class="modalContainer">
+    <div class="modalContainer">
         <div class="title">
             <h1>Detalhes</h1>
             <p @click.prevent="handleShowModal">X</p>
@@ -34,22 +34,16 @@
 export default {
     name: 'Modal',
     props:{
-        modalVisible: {
-            type: Boolean,
-            required: true,
-            default: false
-        },
         data: {
-            type: Object,
+            type: Array,
             required: true,
+        },
+        handleShowModal: {
+            type: Function,
+            required: true
         }
     },
 
-    methods: {
-        handleShowModal(){
-            this.modalVisible = !this.modalVisible
-        }
-    }
 }
 </script>
 

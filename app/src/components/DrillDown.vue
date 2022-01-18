@@ -23,7 +23,7 @@
             </tr>
         </table>
 
-        <Modal :modalVisible="modalVisible" :data="drillAttributes" />
+        <Modal v-show="modalVisible" :data="drillAttributes"  :handleShowModal="handleShowModal"/>
     </div>
 </template>
 
@@ -39,7 +39,7 @@ export default {
             data: {},
             drillAttributes: [],
             counter: 0,
-            modalVisible: true,
+            modalVisible: false,
         }
     },
     components: {
@@ -53,9 +53,10 @@ export default {
 
         showDrill(indice, key){
             this.drillAttributes = this.data[indice].DRILLDOWN.filter(item => item.REGUA == key)
+            this.handleShowModal()
+            console.log(this.modalVisible)
         },
         last(index){
-            console.log(this.data.lenght)
             return index == this.data.length -1 ? 'last' : ''
         },
         handleShowModal(){
@@ -66,68 +67,64 @@ export default {
     beforeMount(){
         this.getData()
     },
-
-    computed: {
-        
-    }
 }
 
 </script>
 
-<style scoped>
-.container {
-    width: 90%;
-    position: relative;
-    z-index: 0;
-}
 
-table {
+<style lang="scss">
+.container {
+  width: 90%;
+  position: relative;
+  z-index: 0;
+
+  table {
     border-collapse: collapse;
     width: 100%;
-}
-tr {
-    box-shadow: 0 0 1px gray;
-}
-td {
-    padding: 1rem;
-}
-.mainTopTh {
-    background: var(--blue-dark);
-    color: #fff;
-}
-.d0 {
-    background: #f96585;
-}
-.d1 {
-    background: #f98585;
-}
-.d2 {
-    background: #f9a385;
-}
-.d3 {
-    background: #FFBA53;
-}
-.vencido, .total {
-    background: #41B7C1;
-}
 
-.last {
-    background: var(--gray) !important;
-    color: #fff  !important;
-}
-.task {
-    background: linear-gradient(to right, #3fc3a2  50%, #fff 50%);
-    background-size: 200% 100%;
-    background-position:right bottom;
-}
+    tr {
+      box-shadow: 0 0 1px gray;
+      td {
+        padding: 1rem;
+        cursor: pointer;
+      }
+    }
+    .mainTopTh {
+      background: var(--blue-dark);
+      color: #fff;
+    }
+    .d0 {
+      background: var(--red);
+    }
+    .d1 {
+      background: var(--red-light);
+    }
+    .d2 {
+      background: #f9a385;
+    }
+    .d3 {
+      background: #ffba53;
+    }
+    .vencido,
+    .total {
+      background: var(--cyan-light);
+    }
 
-.task:hover {
-    background-position: left bottom;
-    transition: all 1.5s ease;
-    cursor: unset;
-}
+    .last {
+      background: var(--gray) !important;
+      color: #fff !important;
+    }
+    .task {
+      background: linear-gradient(to right, var(--cyan-dark) 50%, #fff 50%);
+      background-size: 200% 100%;
+      background-position: right bottom;
+    }
 
-td {
-    cursor: pointer;
+    .task:hover {
+      background-position: left bottom;
+      transition: all 1.5s ease;
+      cursor: unset;
+    }
+  }
 }
 </style>

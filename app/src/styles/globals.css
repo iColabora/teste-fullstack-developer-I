@@ -7,9 +7,18 @@
 }
 
 :root {
-    --gray: #38332E;
-    --gray-light: #5f564c;
-    --blue-dark: #22333B;
+    --gray: #424242;
+    --gray-light: #303030;
+    --blue-dark: #102938;
+    --cyan-light: #B2EBF2;
+    --cyan-light-hover: #ACE4EA;
+    --cyan-dark: #3FC3A2;
+    --red: #F96585;
+    --red-light: #F98585;
+    --orange: #F9A385;
+    --orange-hover: #F19E81;
+    --yellow: #F9BE85;
+    --yellow-hover: #F9BE85;
 
     /* border radius */
     --radius-lg: 20px;
