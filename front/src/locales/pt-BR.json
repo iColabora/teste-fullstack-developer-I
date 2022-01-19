@@ -1,0 +1,19 @@
+{
+  "languages": {
+    "pt-BR": "Português",
+    "en-US": "Inglês"
+  },
+  "columns": {
+    "task": "Tarefa",
+    "defeated": "Vencido",
+    "instance": "Instância",
+    "status": "Status",
+    "protocol": "Protocolo",
+    "scale": "Régua",
+    "start": "Início",
+    "sla": "SLA",
+    "request_type": "Tipo de Requisição",
+    "operator": "Operador"
+  },
+  "noDataResults": "Nenhum registro"
+}

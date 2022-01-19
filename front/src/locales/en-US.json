@@ -1,0 +1,19 @@
+{
+  "languages": {
+    "pt-BR": "Portuguese",
+    "en-US": "English"
+  },
+  "columns": {
+    "task": "Task",
+    "defeated": "Defeated",
+    "instance": "Instance",
+    "status": "Status",
+    "protocol": "Protocol",
+    "scale": "Scale",
+    "start": "Start",
+    "sla": "SLA",
+    "request_type": "Request Type",
+    "operator": "Operator"
+  },
+  "noDataResults": "No Data Results"
+}
