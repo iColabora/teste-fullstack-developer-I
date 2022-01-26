@@ -1,0 +1,101 @@
+.table {
+  background-color: #102938;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.table__header {
+  background-color: #102938;
+  color: #fff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: left;
+}
+
+.task__header {
+  width: 22rem;
+  padding-left: 2rem;
+}
+
+.due__header {
+  width: 13rem;
+  text-align: center;
+}
+
+.d__header {
+  width: 6.3rem;
+  text-align: center;
+}
+
+.total__header {
+  width: 7.3rem;
+  text-align: center;
+}
+
+.table__body {
+  font-weight: 600;
+  text-align: center;
+  width: 5rem;
+  transition: 0.25s ease-in-out;
+}
+
+.table__footer {
+  background-color: #102938;
+  color: #fff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.task__description {
+  background-color: #fff;
+  color: #102938;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 25rem;
+  text-align: left;
+  padding-left: 2rem;
+}
+.task__description:hover {
+  background-color: #3fc3a2;
+}
+
+.task__value {
+  background-color: #ACE4EA;
+  color: #102938;
+}
+
+.deZero__value {
+  background-color: #f96585;
+  color: #102938;
+}
+
+.deUm__value {
+  background-color: #F18181;
+  color: #102938;
+}
+
+.deDois__value {
+  background-color: #F9A385;
+  color: #102938;
+}
+
+.deTres__value {
+  background-color: #F9BE85;
+  color: #102938;
+}
+
+.taskSum__values {
+  background-color: #ACE4EA;
+  color: #102938;
+}
+
+.total__footer {
+  text-align: left;
+  padding-left: 2rem;
+}
+
+/*# sourceMappingURL=table.css.map */

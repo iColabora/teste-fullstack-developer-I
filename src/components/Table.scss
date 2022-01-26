@@ -1,0 +1,191 @@
+$tHeader-bg-color: #102938;
+$tFooter-bg-color: #102938;
+$vencido-bg-color: #ACE4EA;
+$dZero-bg-color: #f96585;
+$dUm-bg-color: #F18181;
+$dDois-bg-color: #F9A385;
+$dTres-bg-color: #F9BE85;
+$somaTarefa-bg-color: #ACE4EA;
+$somaTotal-bg-color: #424242;
+$task-bg-color: #fff;
+
+$task-hover-color:  #3fc3a2;
+
+$textValues-color: #102938;
+$tHeaderValues-color: #fff;
+$tFooterValues-color: #fff;
+
+$valueTask-color: #fff;
+
+@mixin tHeader-style {
+    background-color: $tHeader-bg-color;
+    color:$tHeaderValues-color;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: left;
+}
+
+@mixin taskHeader-style {
+    width: 22rem;
+    padding-left: 2rem;
+}
+
+@mixin dueHeader-style {
+    width: 13rem;
+    text-align: center;
+}
+
+@mixin dHeader-style {
+    width: 6.3rem;
+    text-align: center;
+}
+
+@mixin totalHeader-style{
+    width: 7.3rem;
+    text-align: center;
+}
+
+@mixin tBody-style{
+    font-weight: 600;
+    text-align: center;
+    width:5rem;
+    transition: .25s ease-in-out;
+}
+
+@mixin descrioption-style {
+    background-color: $task-bg-color;
+    color:$textValues-color;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 25rem;
+    text-align: left;
+    padding-left: 2rem;
+    &:hover{
+        background-color:$task-hover-color;
+    }
+}
+
+@mixin vencido-style {
+    background-color: $vencido-bg-color;
+    color: $textValues-color;
+}
+
+@mixin dZero-style {
+    background-color:$dZero-bg-color;
+    color: $textValues-color;
+}
+
+@mixin dUm-style {
+    background-color:$dUm-bg-color;
+    color: $textValues-color;
+}
+
+@mixin dDois-style {
+    background-color: $dDois-bg-color;
+    color: $textValues-color;
+}
+
+@mixin dTres-style {
+    background-color: $dTres-bg-color;
+    color: $textValues-color;
+}
+
+@mixin somaTarefa-style {
+    background-color: $somaTarefa-bg-color;
+    color: $textValues-color;
+}
+
+@mixin somaTotal-style {
+    background-color: $somaTotal-bg-color;
+    color:#fff;
+}
+
+@mixin valueTask-style {
+    background-color: $somaTotal-bg-color;
+    color: $valueTask-color;
+}
+
+@mixin tFooter-style {
+    background-color: $tFooter-bg-color;
+    color:$tFooterValues-color;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+@mixin  totalFooter-style {
+    text-align: left;
+    padding-left: 2rem;
+}
+
+
+.table{
+    background-color: #102938;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.table__header{
+    @include tHeader-style;
+}
+
+.task__header{
+    @include taskHeader-style;
+}
+
+.due__header{
+    @include dueHeader-style;
+}
+
+.d__header{
+    @include dHeader-style;
+}
+
+.total__header{
+    @include totalHeader-style;
+}
+
+.table__body{
+    @include tBody-style;
+}
+
+.table__footer{
+    @include tFooter-style;
+}
+
+
+
+.task__description{
+    @include descrioption-style;
+}
+
+.task__value{
+    @include vencido-style;
+}
+
+.deZero__value{
+    @include dZero-style;
+}
+
+.deUm__value{
+    @include dUm-style;
+}
+
+.deDois__value{
+    @include dDois-style;
+}
+
+.deTres__value{
+    @include dTres-style;
+}
+
+.taskSum__values{
+    @include somaTarefa-style;
+}
+
+.total__footer{
+    @include totalFooter-style;
+}
