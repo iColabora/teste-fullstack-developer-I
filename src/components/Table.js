@@ -1,18 +1,17 @@
-import axios from "axios";
 import { useEffect, useState, useCallback } from "react";
 import "../components/Table.css";
 
-const CustomizedTables = ({ data }) => {
+const CustomizedTables = () => {
   const [tasks, setTasks] = useState([]);
+  
 
-  useEffect(() => {
-    async function listTasks() {
-      const response = await axios.get("http://localhost:3333/tasks");
-      setTasks(response.data);
-      console.log(response.data);
-    }
-
-    listTasks();
+  useEffect(async() => {
+      const response = await fetch("https://ico-fullstack-test.herokuapp.com/v1/histograma");
+      const tasks = await response.json();
+      tasks.pop();
+      setTasks(tasks);
+      console.log(tasks);
+    
   }, []);
 
   const calcTotal = useCallback(
@@ -53,22 +52,22 @@ const CustomizedTables = ({ data }) => {
         <tbody>
           {tasks.map((row) => (
             <tr key={row.id}>
-              <td className="table__body task__description">{row.tarefas}</td>
-              <td className="info1 table__body task__value">{row.vencidos}</td>
+              <td className="table__body task__description">{row.TAREFA}</td>
+              <td className="info1 table__body task__value">{row. VENCIDO}</td>
               <td className="info_value_3 table__body deZero__value">
-                {row.d_zero}
+                {row.D0}
               </td>
               <td className="info_value_4 table__body deUm__value">
-                {row.d_um}
+                {row.D1}
               </td>
               <td className="info_value_5 table__body deDois__value">
-                {row.d_dois}
+                {row.D2}
               </td>
               <td className="info_value_6 table__body deTres__value">
-                {row.d_tres}
+                {row.D3}
               </td>
               <td className="info_value_7 table__body taskSum__values">
-                {row.total}
+                {row.TOTAL}
               </td>
             </tr>
           ))}
@@ -77,12 +76,12 @@ const CustomizedTables = ({ data }) => {
           <th scope="col" className="table__footer total__footer">
             Total
           </th>
-          <td className="table__footer">{calcTotal(tasks, "vencidos")}</td>
-          <td className="table__footer">{calcTotal(tasks, "d_zero")}</td>
-          <td className="table__footer">{calcTotal(tasks, "d_um")}</td>
-          <td className="table__footer">{calcTotal(tasks, "d_dois")}</td>
-          <td className="table__footer">{calcTotal(tasks, "d_tres")}</td>
-          <td className="table__footer">{calcTotal(tasks, "total")}</td>
+          <td className="table__footer">{calcTotal(tasks, "VENCIDO")}</td>
+          <td className="table__footer">{calcTotal(tasks, "D0")}</td>
+          <td className="table__footer">{calcTotal(tasks, "D1")}</td>
+          <td className="table__footer">{calcTotal(tasks, "D2")}</td>
+          <td className="table__footer">{calcTotal(tasks, "D3")}</td>
+          <td className="table__footer">{calcTotal(tasks, "TOTAL")}</td>
         </tfoot>
       </table>
 
