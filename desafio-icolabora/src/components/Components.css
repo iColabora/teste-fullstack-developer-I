@@ -1,0 +1,77 @@
+.Title {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 300px repeat(6, 120px);
+    background-color: #102938;
+    color: #fff;
+}
+
+.Title :first-child {
+    text-align: start;
+}
+
+.Content {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 300px repeat(6, 120px);
+    width: 100%;
+}
+
+.Content h3 {
+    text-align: start;
+    margin: 0;
+    padding: 11px;
+}
+
+.Content h3:hover{
+    background: #3fc3a2;
+    cursor: pointer;
+}
+
+.Content .Vencido {
+    background-color: #b2ebf2;
+}
+
+.Content .D0 {
+    background-color: #f96585;
+}
+
+.Content .D1 {
+    background-color: #f98585;
+}
+
+.Content .D2 {
+    background-color: #f9a385;
+}
+
+.Content .D3 {
+    background-color: #f9be85;
+}
+
+.Content .Total {
+    background-color: #b2ebf2;
+}
+
+.Content h4:hover {
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+.Footer {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 300px repeat(6, 120px);
+    background-color: #424242;
+    color: #fff;
+}
+
+.Footer :first-child {
+    text-align: start;
+}
