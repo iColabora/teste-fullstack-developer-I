@@ -1,0 +1,28 @@
+{
+  "name": "teste-icolabora",
+  "version": "1.0.0",
+  "description": "Teste técnico desenvolvido para participar do processo seletivo da iColabora.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramonsales/teste-fullstack-developer-I.git"
+  },
+  "author": "Ramon Sales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramonsales/teste-fullstack-developer-I/issues"
+  },
+  "homepage": "https://github.com/ramonsales/teste-fullstack-developer-I#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

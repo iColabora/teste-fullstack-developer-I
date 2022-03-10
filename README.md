@@ -1,3 +1,25 @@
+# Como executar o projeto
+
+Para rodar o projeto, é necessário executar 2 etapas, a primeira consiste em entrar no diretório do backend(server) e executar os seguintes comandos:
+
+`npm install`
+
+e depois
+
+`npm start`
+
+A segunda etapa consiste em entrar no diretório do frontend(client) e executar os seguintes comandos:
+
+`npm install`
+
+e depois
+
+`npm run dev`
+
+## Acesso
+
+O projeto estará rodando na porta 3000 do localhost.
+
 # Teste I - Fullstack Development
 
 ## Um pouco sobre nós
@@ -5,11 +27,10 @@
 Estamos procurando uma pessoa desenvolvedora que possa agregar em nosso time, principalmente quem gosta de propor soluções e inovações. Estamos montando nosso novo time de Produtos e pra isso precisamos de pessoas que conheçam:
 
 - Front-end: Angular, React ou VueJS ♥️
-- Backend: NodeJS 
+- Backend: NodeJS
 - Banco de Dados: SQL / Um pouco de NoSQL
 - GIT
 - Ter trabalhado antes em equipes ágeis e multidisciplinares
-
 
 Mas também será ótimo se você conhecer:
 
@@ -18,7 +39,6 @@ Mas também será ótimo se você conhecer:
 - RabbitMQ
 
 Acha que se enquadra no perfil? Temos um teste abaixo para entendermos mais seu conhecimento.
-
 
 ## Problema
 
@@ -42,13 +62,16 @@ API para ter os dados : GET https://ico-fullstack-test.herokuapp.com/v1/histogra
 **Tecnologias que esperamos**:
 
 **Front:**
+
 - Algum framework JS (Angular, React, Vue ♥️)
 - Pré-processador de estilo (SASS, Stylus, SCSS, etc)
 
 **Back:**
+
 - NodeJS para consultar a API
 
 ## Submissão
+
 Para iniciar o teste, faça um fork deste repositório, crie uma branch com o seu nome completo e depois envie-nos o pull request. Se você apenas clonar o repositório não vai conseguir fazer push e depois vai ser mais complicado fazer o pull request. **Importante**: Após finalizar o teste, revisaremos e informaremos sua aprovação ou não. Se for aprovado, mandar um email para rh@icolabora.com com o seu currículo e pretensão 😄
 
 ## Acha que consegue ir mais além?
