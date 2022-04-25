@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    <title>Teste Icolabora</title>
+
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <h1>{{ title }}</h1>
+            <table key="dados" class="dataFromTable" >
+                <thead>
+                    <tr class="thead">
+                        <th>Tarefa</th>
+                        <th>Vencido</th>
+                        <th>D0</th>
+                        <th>D1</th>
+                        <th>D2</th>
+                        <th>D3</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="process in processes" @click="showDrilldown(process)">
+                        <td class="columnTarefa">{{process.TAREFA}}</td>
+                        <td class="columnVencido">{{process.VENCIDO}}</td>
+                        <td class="columnD0">{{process.D0}}</td>
+                        <td class="columnD1">{{process.D1}}</td>
+                        <td class="columnD2">{{process.D2}}</td>
+                        <td class="columnD3">{{process.D3}}</td>
+                        <td class="columnTotal">{{process.TOTAL}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table key="drilldown" class="drillTable" v-show="drilldown.length">
+                <thead>
+                    <tr>
+                        <th>INSTANCIA</th>
+                        <th>STATUS</th>
+                        <th>PROTOCOLO</th>
+                        <th>REGUA</th>
+                        <th>inicio</th>
+                        <th>SLA</th>
+                        <th>TIPO_SOLICITACAO</th>
+                        <th>operador</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="drill in drilldown">
+                        <td>{{drill.INSTANCIA}}</td>
+                        <td>{{drill.STATUS}}</td>
+                        <td>{{drill.PROTOCOLO}}</td>
+                        <td>{{drill.REGUA}}</td>
+                        <td>{{drill.inicio}}</td>
+                        <td>{{drill.SLA}}</td>
+                        <td>{{drill.TIPO_SOLICITACAO}}</td>
+                        <td>{{drill.operador}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                title: 'Teste Icolabora',
+                processes: null,
+                drilldown: []
+            },
+            methods: {
+                getProcesses() {
+                    fetch('https://ico-fullstack-test.herokuapp.com/v1/histograma')
+                        .then(resp => resp.json())
+                        .then(data => this.processes = data)
+                },
+                showDrilldown(drill) {
+                    this.drilldown = drill.DRILLDOWN
+                }
+            },
+            mounted() {
+                this.getProcesses()
+            }
+        })
+    </script>
+</body>
+
+</html>
