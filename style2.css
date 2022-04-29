@@ -1,0 +1,185 @@
+@-webkit-keyframes example {
+  from {
+    background-color: #e9edec;
+  }
+  to {
+    background-color: #3fc3a2;
+  }
+}
+
+@keyframes example {
+  from {
+    background-color: #e9edec;
+  }
+  to {
+    background-color: #3fc3a2;
+  }
+}
+
+body {
+  font-family: "Times New Roman", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+body h1 {
+  text-shadow: 2px 5px 5px #3fc3a2;
+  font-size: 50px;
+  text-align: center;
+}
+
+body table {
+  border-style: groove;
+  border-width: 0px;
+  border-bottom: 0.1px solid #4b4949;
+  text-align: center;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+body table th {
+  border-style: groove;
+  border-width: 0px;
+  border-bottom: 0.1px solid #4b4949;
+  text-align: center;
+  height: 40px;
+}
+
+body table td {
+  border-style: groove;
+  border-width: 0px;
+  border-bottom: 0.1px solid #4b4949;
+  text-align: center;
+  height: 50px;
+}
+
+body table .meContrata {
+  background-color: #000628;
+  color: #ffffff;
+}
+
+body table .blackTotal {
+  background-color: #000628 !important;
+  color: #ffffff;
+  cursor: unset !important;
+}
+
+body table .blackTotal:hover {
+  opacity: 1 !important;
+}
+
+body table .columnTarefa:hover {
+  background-position: left bottom;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+body table .columnTarefa:hover:hover {
+  opacity: 1;
+}
+
+body table .columnTarefa {
+  background-color: #e9edec;
+  text-align: left;
+  width: 35%;
+  cursor: pointer;
+  padding-left: 20px;
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, #e9edec), color-stop(50%, #3fc3a2));
+  background: linear-gradient(to left, #e9edec 50%, #3fc3a2 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+body table .columnTarefa:hover {
+  opacity: 0.85;
+  color: #000000;
+  font-size: 35px;
+}
+
+body table .columnD0 {
+  background-color: #f96585;
+  text-align: center;
+  width: 10%;
+  cursor: pointer;
+}
+
+body table .columnD0:hover {
+  opacity: 0.85;
+  color: #000000;
+  font-size: 35px;
+}
+
+body table .columnD1 {
+  background-color: #f98585;
+  text-align: center;
+  width: 10%;
+  cursor: pointer;
+}
+
+body table .columnD1:hover {
+  opacity: 0.85;
+  color: #000000;
+  font-size: 35px;
+}
+
+body table .columnD2 {
+  background-color: #f9a385;
+  text-align: center;
+  width: 10%;
+  cursor: pointer;
+}
+
+body table .columnD2:hover {
+  opacity: 0.85;
+  color: #000000;
+  font-size: 35px;
+}
+
+body table .columnD3 {
+  background-color: #d6ad44;
+  text-align: center;
+  width: 10%;
+  cursor: pointer;
+}
+
+body table .columnD3:hover {
+  opacity: 0.85;
+  color: #000000;
+  font-size: 35px;
+}
+
+body table .columnVencido {
+  background-color: #8fd5df;
+  text-align: center;
+  width: 15%;
+  cursor: pointer;
+}
+
+body table .columnVencido:hover {
+  opacity: 0.85;
+  color: #000000;
+  font-size: 35px;
+}
+
+body table .columnTotal {
+  background-color: #8fd5df;
+  text-align: center;
+  width: 10%;
+  cursor: pointer;
+}
+
+body table .columnTotal:hover {
+  opacity: 0.85;
+  color: #000000;
+  font-size: 35px;
+}
+
+body .drillTable {
+  margin-top: 30px;
+  border-top: solid;
+}
+
+body .drillData {
+  background-color: #e9edec;
+}
+/*# sourceMappingURL=style2.css.map */

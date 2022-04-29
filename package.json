@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "sass": "^1.51.0",
+    "vue": "^3.2.33"
+  }
 }

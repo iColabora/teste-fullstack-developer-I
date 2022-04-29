@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
     <meta charset="UTF-8">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style2.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
     <title>Teste Icolabora</title>
 
@@ -14,9 +15,9 @@
     <div id="app">
         <div>
             <h1>{{ title }}</h1>
-            <table key="dados" class="dataFromTable" >
+            <table key="dados" class="mainTable">
                 <thead>
-                    <tr class="thead">
+                    <tr class="meContrata">
                         <th>Tarefa</th>
                         <th>Vencido</th>
                         <th>D0</th>
@@ -27,20 +28,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="process in processes" @click="showDrilldown(process)">
-                        <td class="columnTarefa">{{process.TAREFA}}</td>
-                        <td class="columnVencido">{{process.VENCIDO}}</td>
-                        <td class="columnD0">{{process.D0}}</td>
-                        <td class="columnD1">{{process.D1}}</td>
-                        <td class="columnD2">{{process.D2}}</td>
-                        <td class="columnD3">{{process.D3}}</td>
-                        <td class="columnTotal">{{process.TOTAL}}</td>
+                    <tr v-for="process in processes" >
+                        <td v-bind:class="{blackTotal: process.TAREFA==='Total', columnTarefa: process.TAREFA!=='Total'}" @click="showDrilldown(process.DRILLDOWN)">{{process.TAREFA}}</td>
+                        <td v-bind:class="{blackTotal: process.TAREFA==='Total', columnVencido: process.TAREFA!=='Total'}" @click="showDrilldown(process.DRILLDOWN, 'VENCIDO')">{{process.VENCIDO}}</td>
+                        <td v-bind:class="{blackTotal: process.TAREFA==='Total', columnD0: process.TAREFA!=='Total'}" @click="showDrilldown(process.DRILLDOWN, 'D0')">{{process.D0}}</td>
+                        <td v-bind:class="{blackTotal: process.TAREFA==='Total', columnD1: process.TAREFA!=='Total'}" @click="showDrilldown(process.DRILLDOWN, 'D1')">{{process.D1}}</td>
+                        <td v-bind:class="{blackTotal: process.TAREFA==='Total', columnD2: process.TAREFA!=='Total'}" @click="showDrilldown(process.DRILLDOWN, 'D2')">{{process.D2}}</td>
+                        <td v-bind:class="{blackTotal: process.TAREFA==='Total', columnD3: process.TAREFA!=='Total'}" @click="showDrilldown(process.DRILLDOWN, 'D3')">{{process.D3}}</td>
+                        <td v-bind:class="{blackTotal: process.TAREFA==='Total', columnTotal: process.TAREFA!=='Total'}" @click="showDrilldown(process.DRILLDOWN)">{{process.TOTAL}}</td>
                     </tr>
                 </tbody>
             </table>
             <table key="drilldown" class="drillTable" v-show="drilldown.length">
                 <thead>
-                    <tr>
+                    <tr class="meContrata">
                         <th>INSTANCIA</th>
                         <th>STATUS</th>
                         <th>PROTOCOLO</th>
@@ -53,14 +54,14 @@
                 </thead>
                 <tbody>
                     <tr v-for="drill in drilldown">
-                        <td>{{drill.INSTANCIA}}</td>
-                        <td>{{drill.STATUS}}</td>
-                        <td>{{drill.PROTOCOLO}}</td>
-                        <td>{{drill.REGUA}}</td>
-                        <td>{{drill.inicio}}</td>
-                        <td>{{drill.SLA}}</td>
-                        <td>{{drill.TIPO_SOLICITACAO}}</td>
-                        <td>{{drill.operador}}</td>
+                        <td class="drillData">{{drill.INSTANCIA}}</td>
+                        <td class="drillData">{{drill.STATUS}}</td>
+                        <td class="drillData">{{drill.PROTOCOLO}}</td>
+                        <td class="drillData">{{drill.REGUA}}</td>
+                        <td class="drillData">{{drill.inicio}}</td>
+                        <td class="drillData">{{drill.SLA}}</td>
+                        <td class="drillData">{{drill.TIPO_SOLICITACAO}}</td>
+                        <td class="drillData">{{drill.operador}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -71,9 +72,9 @@
         new Vue({
             el: '#app',
             data: {
-                title: 'Teste Icolabora',
+                title: 'Teste Icolabora por: Andreos Heller',
                 processes: null,
-                drilldown: []
+                drilldown: [],
             },
             methods: {
                 getProcesses() {
@@ -81,10 +82,19 @@
                         .then(resp => resp.json())
                         .then(data => this.processes = data)
                 },
-                showDrilldown(drill) {
-                    this.drilldown = drill.DRILLDOWN
+
+                showDrilldown(drill, regua = null) {
+                     if (regua === null) { 
+                        this.drilldown = drill
+                        console.log(this.drilldown)
+                     } else {
+                        this.drilldown = drill.filter((obj) => {
+                            return obj.REGUA === regua
+                        })
+                    } 
                 }
             },
+            
             mounted() {
                 this.getProcesses()
             }

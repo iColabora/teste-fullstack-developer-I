@@ -1,0 +1,114 @@
+@mixin border($align) {
+    border-style: groove;
+    border-width: 0px;
+    border-bottom: 0.1px solid #4b4949;
+    text-align: $align;
+}
+
+@mixin mainColumns($bckgndColor, $align, $width) {
+    background-color: $bckgndColor;
+    text-align: $align;
+    width: $width;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.85;
+        color: #000000;
+        font-size: 35px; 
+    }
+}
+
+@keyframes example {
+    from {background-color: #e9edec;}
+    to {background-color: #3fc3a2;}
+}
+
+body {
+    font-family: "Times New Roman", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+
+    h1{
+        text-shadow: 2px 5px 5px #3fc3a2;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    table {
+        @include border(center);
+        width: 100%;
+        border-collapse: collapse;
+
+        th {
+            @include border(center);
+            height: 40px;
+        }
+
+        td {
+            @include border(center);
+            height: 50px;
+        }
+
+        .meContrata {
+            background-color: #000628;
+            color: #ffffff;
+        }
+
+        .blackTotal {
+            background-color: #000628 !important;
+            color: #ffffff;
+            cursor: unset !important;
+            &:hover {
+                opacity: 1 !important;
+            }
+        }
+
+        .columnTarefa:hover {
+            background-position: left bottom;
+            transition: all 0.5s linear;
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .columnTarefa {
+            @include mainColumns(#e9edec, left, 35%);
+            padding-left: 20px;
+            background: linear-gradient(to left, #e9edec 50%, #3fc3a2 50%);
+            background-size: 200% 100%;
+            background-position: right bottom; 
+        }
+
+        .columnD0 {
+            @include mainColumns(#f96585, center, 10%);
+        }
+
+        .columnD1 {
+            @include mainColumns(#f98585, center, 10%);
+        }
+
+        .columnD2 {
+            @include mainColumns(#f9a385, center, 10%);
+        }
+
+        .columnD3 {
+            @include mainColumns(#d6ad44, center, 10%);
+        }
+
+        .columnVencido {
+            @include mainColumns(#8fd5df, center, 15%);
+        }
+
+        .columnTotal {
+            @include mainColumns(#8fd5df, center, 10%);
+        }
+    }
+
+    .drillTable {
+        margin-top: 30px;
+        border-top: solid;
+
+    }
+    .drillData {
+        background-color: #e9edec;
+    }
+}
