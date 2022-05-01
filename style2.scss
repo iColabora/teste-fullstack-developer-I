@@ -17,11 +17,6 @@
     }
 }
 
-@keyframes example {
-    from {background-color: #e9edec;}
-    to {background-color: #3fc3a2;}
-}
-
 body {
     font-family: "Times New Roman", sans-serif;
     font-weight: bold;
@@ -29,8 +24,8 @@ body {
 
     h1{
         text-shadow: 2px 5px 5px #3fc3a2;
-        font-size: 50px;
-        text-align: center;
+        font-size: 25px;
+        text-align: left;
     }
 
     table {
@@ -48,7 +43,7 @@ body {
             height: 50px;
         }
 
-        .meContrata {
+        .thead {
             background-color: #000628;
             color: #ffffff;
         }

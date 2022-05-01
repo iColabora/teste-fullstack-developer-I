@@ -17,7 +17,7 @@
             <h1>{{ title }}</h1>
             <table key="dados" class="mainTable">
                 <thead>
-                    <tr class="meContrata">
+                    <tr class="thead">
                         <th>Tarefa</th>
                         <th>Vencido</th>
                         <th>D0</th>
@@ -41,7 +41,7 @@
             </table>
             <table key="drilldown" class="drillTable" v-show="drilldown.length">
                 <thead>
-                    <tr class="meContrata">
+                    <tr class="thead">
                         <th>INSTANCIA</th>
                         <th>STATUS</th>
                         <th>PROTOCOLO</th>
@@ -72,7 +72,7 @@
         new Vue({
             el: '#app',
             data: {
-                title: 'Teste Icolabora por: Andreos Heller',
+                title: 'Teste Icolabora: Andreos Heller',
                 processes: null,
                 drilldown: [],
             },
