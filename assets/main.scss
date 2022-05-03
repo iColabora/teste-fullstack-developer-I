@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap');
+$color-app: #9e63d5;
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: $color-app;
+}
+
+.loading-error {
+  color: $color-app;
+  font-size: 2rem;
+}
+
+.task-content {
+  background-color: white;
+  border-radius: 25px;
+  margin-top: 10vh;
+  padding: 1em;
+}
+
+.task-content-detail {
+  background-color: white;
+  border-radius: 25px;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  padding: 1em;
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+.task-content-detail::-webkit-scrollbar-thumb {
+  background-color: $color-app;
+  border-right: transparent 4px solid;
+  background-clip: padding-box;
+}
+
+.task-content-detail::-webkit-scrollbar {
+  width: 10px;
+}
+
+.table-task {
+  width: 100%;
+  border-collapse: separate;
+  color: white;
+  max-height: 300px;
+  overflow-y: scroll;
+
+  td {
+    padding: 0.6em;
+    border-radius: 25px;
+  }
+
+  thead {
+    background-color: white;
+    color: $color-app;
+
+    tr th {
+      padding: 0.5em;
+    }
+  }
+
+  tbody {
+    color: #333333;
+
+    tr {
+      background: linear-gradient(to right, #3fc3a2 50%, #e7e5e5 50%);
+      background-size: 200%;
+      background-position: right;
+      transition: all .2s ease-in;
+
+      :hover {
+        cursor: pointer;
+      }
+
+      .task-vencida {
+        background-color: #ace4ea;
+      }
+
+      .task-d-0 {
+        background-color: #f96585;
+      }
+
+      .task-d-1 {
+        background-color: #f98585;
+      }
+
+      .task-d-2 {
+        background-color: #f9a385;
+      }
+
+      .task-d-3 {
+        background-color: #f9be85;
+      }
+
+      .task-total {
+        background-color: #ace4ea;
+        pointer-events: none;
+      }
+    }
+
+    tr:hover {
+      background-position: left;
+      filter: brightness(80%);
+    }
+
+  }
+
+  tfoot {
+    background-color: #424242;
+  }
+}
