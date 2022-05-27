@@ -1,0 +1,72 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.034);
+}
+
+td,th {
+    font-size: 0.6em;
+    width: 100vw;
+    text-align: center;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+.cabecalho {
+    background-color: rgb(9, 36, 71);
+    color: aliceblue;
+}
+
+td.coluna1{
+    text-align: left;
+    width: 30%;
+}
+
+td.status{
+    background-color: rgb(238, 238, 245);
+}
+
+td.status:hover{
+    background-color: #3fc3a2;
+    transition: 0.5s;
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+td.status-vencido{
+    background-color: rgba(157, 219, 240, 0.767);
+}
+
+td.status0 {
+    background-color: #f96585;
+}
+
+td.status1 {
+    background-color:#f98585;
+}
+
+td.status2 {
+    background-color: #f9a385;
+}
+
+td.status3 {
+    background-color: #f9bd85;
+}
+
+td.total-status{
+    background-color: rgba(157, 219, 240, 0.767);
+}
+
+.rodape {
+    background-color: rgba(0, 0, 0, 0.733);
+    color: aliceblue;
+}
