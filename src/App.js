@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import api from "./services/api";
+import './Style.scss' 
 
 export default function App() {
 
@@ -15,7 +16,7 @@ export default function App() {
           setRelatorio(response.data)
         })
         .catch((err) => {
-          console.error("ops! ocorreu um erro" + err);
+          console.error("ocorreu um erro" + err);
         });
     }, []);
 
