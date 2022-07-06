@@ -1,0 +1,157 @@
+.containerContent {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tableContainer {
+  margin-top: 2rem;
+  min-width: 440px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  span {
+    overflow-x: hidden;
+  }
+
+  .tableHeader,
+  .tableItem,
+  .tableFooter {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    height: 3.6rem;
+    text-align: center;
+  }
+
+  .tableHeader {
+    background: #102938;
+    color: white;
+  }
+
+  .tableBody {
+    width: 100%;
+    flex-direction: column;
+
+    .tableItem span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .tableItem {
+    position: relative;
+    cursor: pointer;
+    background: #f5f5f5;
+    .item_1 div {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      background: #3fc3a2;
+      transition: width 0.2s ease-in-out;
+    }
+
+    &:hover {
+      filter: brightness(0.9);
+      .item_1 div {
+        width: 100%;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      box-shadow: 0 0 1px;
+    }
+  }
+
+  .tableFooter {
+    background: #424242;
+    color: white;
+  }
+
+  .item_1 {
+    position: relative;
+    flex: 10;
+    text-align: start;
+    padding: 0 1rem;
+    justify-content: flex-start !important;
+    span {
+      position: relative;
+      display: flex;
+      justify-content: flex-start !important;
+    }
+  }
+
+  .item_2 {
+    flex: 4;
+  }
+  .tableItem {
+    .item_2 {
+      background: #b2ebf2;
+    }
+  }
+
+  .item_3 {
+    flex: 2;
+  }
+  .tableItem {
+    .item_3 {
+      background: #f96585;
+    }
+  }
+
+  .item_4 {
+    flex: 2;
+  }
+  .tableItem {
+    .item_4 {
+      background: #f98585;
+    }
+  }
+
+  .item_5 {
+    flex: 2;
+  }
+  .tableItem {
+    .item_5 {
+      background: #f9a385;
+    }
+  }
+
+  .item_6 {
+    flex: 2;
+  }
+  .tableItem {
+    .item_6 {
+      background: #f9be85;
+    }
+  }
+
+  .item_7 {
+    flex: 3;
+  }
+  .tableItem {
+    .item_7 {
+      background: #b2ebf2;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    font-size: 0.8rem;
+  }
+}
