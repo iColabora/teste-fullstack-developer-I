@@ -146,7 +146,6 @@ export default {
       this.$axios.get('https://ico-fullstack-test.herokuapp.com/v1/histograma')
         .then((res) => {
           this.histograma = res.data
-          console.log(res.data)
         })
         .catch((err) => {
           console.log(err)
@@ -156,7 +155,6 @@ export default {
       // this.detalhamento = linha
       this.histograma.forEach((registro) => {
         if (registro.TAREFA === linha) {
-          console.log('[forEach]', registro)
           if (coluna === 'TOTAL') {
             this.detalhamento = registro.DRILLDOWN
           } else {
