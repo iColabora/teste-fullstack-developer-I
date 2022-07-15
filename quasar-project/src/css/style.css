@@ -1,0 +1,36 @@
+/*style.css*/
+/* STYLE */
+
+.q-table{
+	max-width: 100% !important;
+}
+.padrao {
+   background: rgb(127, 236, 255)!important;
+}
+
+.d0 {
+  background: #f96585!important;
+}
+
+.d1 {
+  background: #f98585!important;
+}
+
+.d2 {
+  background: #f9a385!important;
+}
+
+.d3 {
+  background: #f8b9a3fb!important;
+}
+
+.total {
+  background: #4e4e4efb!important;
+}
+
+thead tr:first-child th {
+  background: #03151a!important;
+  color: white;
+
+}
+/*END STYLE*/
