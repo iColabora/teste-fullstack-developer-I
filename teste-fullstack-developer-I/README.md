@@ -1,29 +1,9 @@
 # teste-fullstack-developer-I
 
-This template should help get you started developing with Vue 3 in Vite.
+## Considerações finais:
 
-## Recommended IDE Setup
+Olá, quis dar uma passadinha aqui pois gostaria de informar algumas coisas. Em primeiro lugar, eu amei ter uma nova experiência como esta
+e poder sair da minha zona de conforto, foi muito legal. Apesar de não ter conseguido fazer tudo como imaginei que conseguiria, eu posso
+dizer sem dúvidas que dei meu melhor. Quero agradecer à iCollabora pela oportunidade, e dizer que se possível em algum momento futuro podem contar comigo.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Mais uma vez meus sinceros agradecimentos à toda equipe que me permitiu participar. Obrigado!

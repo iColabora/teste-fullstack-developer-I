@@ -1,184 +1,98 @@
 <template>
-  <div class="container">
-    <table>
-      <thead>
-        <tr>
-          <th class="titulo">Tarefa</th>
-          <th>Vencido</th>
-          <th>D0</th>
-          <th>D1</th>
-          <th>D2</th>
-          <th>D3</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="info in infos" :key="info.TAREFA">
-          <td class="tarefa"><button class="btn-modal" v-if="openModal != true">{{info.TAREFA}}</button></td>
-          <td class="vencido">{{info.VENCIDO}}</td>
-          <td class="D0">{{info.D0}}</td>
-          <td class="D1">{{info.D1}}</td>
-          <td class="D2">{{info.D2}}</td>
-          <td class="D3">{{info.D3}}</td>
-          <td class="totalFinal">{{info.TOTAL}}</td>
-        </tr>
-      </tbody>
-      <tfoot class="footer">
-        <tr>
-          <td class="total">Total</td>
-          <td>{{footerInfo.VENCIDO}}</td>
-          <td>{{footerInfo.D0}}</td>
-          <td>{{footerInfo.D1}}</td>
-          <td>{{footerInfo.D2}}</td>
-          <td>{{footerInfo.D3}}</td>
-          <td>{{footerInfo.TOTAL}}</td>
-          </tr>
-      </tfoot>
-    </table>
-  </div>
-    <!-- <div class="home">
-    <Modal @close="toggleModal" :modalActive="modalActive">
-      <div class="modal-content">
-        <h1>This is a Modal Header</h1>
-        <p>This is a modal message</p>
-      </div>
-    </Modal>
-    <button @click="toggleModal" type="button">Open Modal</button>
-  </div> -->
+  <transition name="modal-animation">
+    <div v-show="modalActive" class="modal">
+      <transition name="modal-animation-inner">
+        <div v-show="modalActive" class="modal-inner">
+          <i @click="close" class="far fa-times-circle"></i>
+          <!-- Modal Content -->
+          <slot />
+          <button @click="close" type="button">Close</button>
+        </div>
+      </transition>
+    </div>
+  </transition>
 </template>
 
 <script>
-import { ref } from 'vue';
-import ModalVue from './components/Modal.vue';
-
 export default {
-  name: 'Home',
-  components: {
-    ModalVue
-  },
-
-  setup() {
-    const modalActive = ref(false);
-
-    const toggleModal = () => {
-      modalActive.value = !modalActive.value;
+  props: ["modalActive"],
+  setup(props, { emit }) {
+    const close = () => {
+      emit("close");
     };
 
-    return { modalActive, toggleModal };
+    return { close };
   },
-
-  data() {
-    return {
-      info:[],
-      footerInfo:{},
-    };
-  },
-  methods:{
-    async dados(){
-      let res = await fetch("https://ico-fullstack-test.herokuapp.com/v1/histograma")
-      .then(response => response.json())
-      this.footerInfo = res.pop(res.length - 1)
-      this.infos = res
-    },
-  },
-  mounted(){
-    this.dados()
-  }
-}
+};
 </script>
 
-<style scoped lang="scss">
-  table{
-    border: 0%;
-    width: 100%;
+<style lang="scss" scoped>
+.modal-animation-enter-active,
+.modal-animation-leave-active {
+  transition: opacity 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02);
+}
 
+.modal-animation-enter-from,
+.modal-animation-leave-to {
+  opacity: 0;
+}
 
+.modal-animation-inner-enter-active {
+  transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02) 0.15s;
+}
 
-    .titulo{
-      text-align: left;
-    }
-    .footer{
-      background-color: #222222;
-      color: white;
-    }
+.modal-animation-inner-leave-active {
+  transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02);
+}
 
-    .total{
-      text-align: left;
-    }
+.modal-animation-inner-enter-from {
+  opacity: 0;
+  transform: scale(0.8);
+}
 
-   .tarefa{
-      text-align: left;
-      width: 30%;
-      background-color: #F4F4F4;
-    }
+.modal-animation-inner-leave-to {
+  transform: scale(0.8);
+}
 
-    .tarefa:hover{
-      background-color: #3DC2A2;
-    }
-
-    .vencido{
-      background-color: #B1EAF1;
-    }
-
-    .D0{
-      background-color: #F06280;
-    }
-
-    .D1{
-      background-color: #F08080;
-    }
-
-    .D2{
-      background-color: #F8A285;
-    }
-
-    .D3{
-      background-color: #F8BD85;
-    }
-
-    .totalFinal{
-      background-color: #ABE3E9;
-    }
-
-    border-collapse: collapse;
-
-    td{
-      text-align: center;
-      padding: 20px;
-    }
-
-    thead > tr > th{
-      background-color: #0F2837;
-      color: white;
-      border: 0px;
-      padding: 20px;
-    }
-
-  }
-
-  .home {
-  background-color: rgba(0, 176, 234, 0.5);
-  height: 100vh;
+.modal {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.7);
 
-  .modal-content {
-    display: flex;
-    flex-direction: column;
+  .modal-inner {
+    position: relative;
+    max-width: 640px;
+    width: 80%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background-color: #fff;
+    padding: 64px 16px;
 
-    h1,
-    p {
-      margin-bottom: 16px;
+    i {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+
+      &:hover {
+        color: crimson;
+      }
     }
 
-    h1 {
-      font-size: 32px;
-    }
-
-    p {
-      font-size: 18px;
+    button {
+      padding: 20px 30px;
+      border: none;
+      font-size: 16px;
+      background-color: crimson;
+      color: #fff;
+      cursor: pointer;
     }
   }
 }
-  </style>
+</style>
