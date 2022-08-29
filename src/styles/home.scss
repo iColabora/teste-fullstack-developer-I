@@ -1,0 +1,98 @@
+.cell-background{
+  background: linear-gradient(to left, white 50%, #3fc3a2 50%) right; /* white: cor inicial; green: cor com hover*/
+  background-size: 200%;
+}
+
+.header {
+  @apply  px-3 bg-[#102938] text-white ;
+
+  &__task {
+     @apply min-w-[27rem] pl-3 py-4 border border-gray-400/50;
+  }
+
+  &__expired {
+     @apply min-w-[15rem] text-center py-4 border border-gray-400/50;
+  }
+
+  &__day {
+     @apply min-w-[7rem] text-center py-4 border border-gray-400/50;
+  }
+
+  &__total {
+     @apply min-w-[8rem] text-center py-4 border border-gray-400/50;
+  }
+}
+
+.footer{
+  @apply  px-3 bg-[#424242] text-white ;
+
+  &__task {
+     @apply min-w-[27rem] pl-3 py-4 border border-gray-400/50;
+  }
+
+  &__expired {
+     @apply min-w-[15rem] text-center py-4 border border-gray-400/50;
+  }
+
+  &__day {
+     @apply min-w-[7rem] text-center py-4 border border-gray-400/50;
+  }
+
+  &__total {
+     @apply min-w-[8rem] text-center py-4 border border-gray-400/50;
+  }
+}
+
+.row{
+  @apply  px-3;
+
+  &__task {
+     @apply min-w-[27rem]  pl-3 py-4 border border-gray-400/50 cursor-pointer cell-background hover:bg-left transition-all duration-300;
+
+     &__open {
+      @apply bg-[#3fc3a2] cursor-pointer pl-3
+     }
+  }
+
+  &__expired {
+     @apply min-w-[15rem] bg-[#B2EBF2] text-center py-4 border border-gray-400/50;
+  }
+
+  &__day {
+     @apply min-w-[7rem]  py-4;
+
+     &__d0{
+      @apply bg-[#f96585] text-center border border-gray-400/50;
+     }
+     &__d1{
+      @apply bg-[#F98585] text-center border border-gray-400/50;
+     }
+     &__d2{
+      @apply bg-[#f9a385] text-center border border-gray-400/50;
+     }
+     &__d3{
+      @apply bg-[#F1B881] text-center border border-gray-400/50;
+     }
+  }
+
+  &__total {
+     @apply min-w-[8rem] bg-[#B2EBF2] text-center py-4 border border-gray-400/50;
+  }
+}
+
+.details{
+  @apply  px-3;
+
+  &__row {
+     @apply min-w-[15.6rem]  pl-3 py-2 border-x border-gray-400/50
+    }
+}
+
+.detail{
+  @apply  px-3;
+
+  &__row {
+    @apply min-w-[15.6rem]  pl-3 py-2 border border-gray-400/50
+   }
+}
+
