@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.row_header_color{
+    width: 13vw;
+    height: 5vh;
+    text-align: center;
+    background-color: #102938;
+    color: #fff;
+    border: none;
+}
+
+.col_value{
+    width: 10vw;
+    height: 5vh;
+    text-align: center;
+}
+
+.col_value_task{
+    width: 35vw;
+    height: 5vh;
+    padding-left: 2rem;
+    
+}
+
+/* Para deixar visível a cor somente com o mouse */
+.col_value_task:hover{
+    background-color: #3FC3A2;
+    transition: .8s;
+    
+}
+
+.tablefooter{
+    width: 13vw;
+    height: 5vh;
+    text-align: center;
+    background-color: #424242;
+    color: #fff;
+    border: none;
+}
+
+.col_vencidos{
+    background-color: #B2EBF2;
+    width: 25vw;
+}
+
+.col_d0{
+    background-color: #f96585;
+    width: 5vw;
+}
+
+.col_d1{
+    background-color: #F18181;
+    width: 5vw;
+}
+
+.col_d2{
+    background-color: #F19E81;
+    width: 5vw;
+}
+
+.col_d3{
+    background-color: #F1B881;
+    width: 5vw;
+}
+
+.col_total{
+    background-color: #B2EBF2;
+    width: 20vw;
+}

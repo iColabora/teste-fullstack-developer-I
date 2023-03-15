@@ -1,58 +1,70 @@
-# Teste I - Fullstack Development
+# Getting Started with Create React App
 
-## Um pouco sobre nós
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Estamos procurando uma pessoa desenvolvedora que possa agregar em nosso time, principalmente quem gosta de propor soluções e inovações. Estamos montando nosso novo time de Produtos e pra isso precisamos de pessoas que conheçam:
+## Available Scripts
 
-- Front-end: Angular, React ou VueJS ♥️
-- Backend: NodeJS 
-- Banco de Dados: SQL / Um pouco de NoSQL
-- GIT
-- Ter trabalhado antes em equipes ágeis e multidisciplinares
+In the project directory, you can run:
 
+### `npm start`
 
-Mas também será ótimo se você conhecer:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- Docker e Docker-compose
-- Jenkins
-- RabbitMQ
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Acha que se enquadra no perfil? Temos um teste abaixo para entendermos mais seu conhecimento.
+### `npm test`
 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Problema
+### `npm run build`
 
-Um cliente deseja ver um relatório de como estão os prazos de atendimento de sua operação. Pensando nisso, elaboramos um relatório em forma de mapa de calor que consiga demonstrar de forma visual. Além disso, os detalhes são cruciais para uma tomada de decisão, portanto ao clicar em cada célula deve vir os detalhes, exceto na linha totalizadora
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-As colunas se referem ao campo SLA dentro do atributo DRILLDOWN
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-![Histograma](https://uploaddeimagens.com.br/images/003/609/209/original/img001.png?1640888617)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Consultando a API abaixo, desenvolva no front-end um painel similar ao do protótipo. **Aceitamos inovação, então pode inovar sem problemas 😉**
+### `npm run eject`
 
-Efeitos de CSS:
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-- Ao passar o mouse por cima da célula das Tarefas, preencher da esquerda para a direita com a cor: #3fc3a2
-- Paleta de cores das colunas de D0 a D3: #f96585 #f98585 #f9a385
-- Cursor pointer dentro das células que são possíveis clicar
-- Efeito de opacidade dentro de uma célula quando o mouse passar por cima
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-API para ter os dados : GET https://ico-fullstack-test.herokuapp.com/v1/histograma
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-**Tecnologias que esperamos**:
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-**Front:**
-- Algum framework JS (Angular, React, Vue ♥️)
-- Pré-processador de estilo (SASS, Stylus, SCSS, etc)
+## Learn More
 
-**Back:**
-- NodeJS para consultar a API
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Submissão
-Para iniciar o teste, faça um fork deste repositório, crie uma branch com o seu nome completo e depois envie-nos o pull request. Se você apenas clonar o repositório não vai conseguir fazer push e depois vai ser mais complicado fazer o pull request. **Importante**: Após finalizar o teste, revisaremos e informaremos sua aprovação ou não. Se for aprovado, mandar um email para rh@icolabora.com com o seu currículo e pretensão 😄
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Acha que consegue ir mais além?
+### Code Splitting
 
-Temos mais um teste avançado e caso tenha interesse, mande para nós: https://github.com/iColabora/teste-fullstack-developer-II
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Boa sorte! =D
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
