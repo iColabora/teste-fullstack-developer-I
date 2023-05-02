@@ -30,9 +30,6 @@ export default {
         { name: 'operador', label: 'Operador', align: 'center', field: 'operador' }
       ]
     }
-  },
-  mounted () {
-    console.log('this.listDrilldown', this.listDrilldown)
   }
 }
 </script>
