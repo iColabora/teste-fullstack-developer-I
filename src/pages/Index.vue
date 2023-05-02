@@ -122,7 +122,6 @@ export default {
       this.contentDrillDown = []
       drillDown.length ? this.haveDrill = true : this.haveDrill = false
       this.contentDrillDown = drillDown
-      console.log('rows', rows)
     }
   }
 }
