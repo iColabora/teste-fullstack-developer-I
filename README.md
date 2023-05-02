@@ -2,9 +2,9 @@
 
 Tabela requisitando API heroku
 
-A funcionalidade principal do projeto é uma tabela que se comunica com uma API, permitindo que o usuário visualize os dados de forma estilizada e de fácil entendimento, não só isso, a tabela também conta com drilldown que permite o usuário ver informações mais detalhadas sobre os dados em si. Esses dados são baixados junto com os arquivos do projeto.
+A funcionalidade principal do projeto é uma tabela que se comunica com uma pseudo API, permitindo que o usuário visualize os dados de forma estilizada e de fácil entendimento, não só isso, a tabela também conta com drilldown que permite o usuário ver informações mais detalhadas sobre os dados em si. Esses dados são baixados junto com os arquivos do projeto, pois a API não estava em funcionamento durante o desenvolvimento do projeto.
 
-O Quasar foi essencial para a criação da tabela, já que ele oferece componentes prontos para uso, como a tabela, que facilitam a criação de interfaces de usuário. Além disso, ele inclui recursos que permitem a comunicação com APIs, tornando mais fácil a integração com a API utilizada no projeto.
+O Quasar foi essencial para a criação da tabela, já que ele oferece componentes prontos para uso, como a tabela, que facilitam a criação de interfaces de usuário. Além disso, ele inclui recursos que permitem a comunicação com APIs, tornando mais fácil a integração com a pseudo API utilizada no projeto.
 
 Caso houver um erro na hora de iniciar o ambiente dev (yarn quasar dev)
 ![image](https://user-images.githubusercontent.com/106493859/235708487-4f30aeca-c187-4dc6-b2ee-217315b81c46.png)
