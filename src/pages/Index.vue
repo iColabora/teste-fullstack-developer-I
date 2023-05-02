@@ -124,11 +124,6 @@ export default {
       this.contentDrillDown = drillDown
       console.log('rows', rows)
     }
-  },
-  mounted () {
-    for (const col of this.columns) {
-      console.log('col', col.label)
-    }
   }
 }
 </script>
