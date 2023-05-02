@@ -3,7 +3,7 @@
 
 Tabela requisitando API heroku
 
-A funcionalidade principal do projeto é uma tabela que se comunica com uma pseudo API, permitindo que o usuário visualize os dados de forma estilizada e de fácil entendimento, não só isso, a tabela também conta com drilldown que permite o usuário ver informações mais detalhadas sobre os dados em si. Esses dados são baixados junto com os arquivos do projeto, pois a API não estava em funcionamento durante o desenvolvimento do projeto.
+A funcionalidade principal do projeto é uma tabela que se comunica com um arquivo json (pseudo API), permitindo que o usuário visualize os dados de forma estilizada e de fácil entendimento, não só isso, a tabela também conta com drilldown que permite o usuário ver informações mais detalhadas sobre os dados em si. Esses dados são baixados junto com os arquivos do projeto.
 
 O Quasar foi essencial para a criação da tabela, já que ele oferece componentes prontos para uso, como a tabela, que facilitam a criação de interfaces de usuário. Além disso, ele inclui recursos que permitem a comunicação com APIs, tornando mais fácil a integração com a pseudo API utilizada no projeto.
 
