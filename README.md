@@ -8,6 +8,7 @@ O Quasar foi essencial para a criação da tabela, já que ele oferece component
 
 Caso houver um erro na hora de iniciar o ambiente dev (yarn quasar dev)
 ![image](https://user-images.githubusercontent.com/106493859/235708487-4f30aeca-c187-4dc6-b2ee-217315b81c46.png)
+
 Basta apenas usar os comandos abaixo na CLI que irá resolver
 
 No tipo Unix (Linux, macOS, Git bash, etc.): "export NODE_OPTIONS=--openssl-legacy-provider"
