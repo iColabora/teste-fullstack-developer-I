@@ -37,7 +37,7 @@ Efeitos de CSS:
 - Cursor pointer dentro das células que são possíveis clicar
 - Efeito de opacidade dentro de uma célula quando o mouse passar por cima
 
-API para ter os dados : GET https://ico-fullstack-test.herokuapp.com/v1/histograma
+API para ter os dados : GET https://s3.sa-east-1.amazonaws.com/icolabora.com.br/api-test-dev.json
 
 **Tecnologias que esperamos**:
 
