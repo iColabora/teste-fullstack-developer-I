@@ -1,0 +1,33 @@
+$color-task:#ffffff;
+$color-expired:#b2ebf2;
+$color-D0:#f96585;
+$color-D1:#f98585;
+$color-D2:#f9a385;
+$color-D3:#f9be85;
+$color-total:#b2ebf2;
+$color-last-line: #424242;
+.bg-task {
+    background-color: $color-task !important;
+}
+.bg-expired {
+    background-color: $color-expired !important;
+}
+.bg-D0 {
+    background-color: $color-D0 !important;
+}
+.bg-D1 {
+    background-color: $color-D1 !important;
+}
+.bg-D2 {
+    background-color: $color-D2 !important;
+}
+.bg-D3 {
+    background-color: $color-D3 !important;
+}
+.bg-total {
+    background-color: $color-total !important;
+}
+.bg-last-line {
+    background-color: $color-last-line !important;
+    color: $color-task;
+}
